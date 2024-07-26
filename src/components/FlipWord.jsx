@@ -1,6 +1,5 @@
 import React from "react";
 import { FlipWords } from "./ui/flip-words";
-
 export default function FlipWord() {
   const words = ["Web Developer", "UX Designer", "Artist", "Writer"];
 

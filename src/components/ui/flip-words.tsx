@@ -15,10 +15,10 @@ export const FlipWords = ({
   const [currentWord, setCurrentWord] = useState(words[0]);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
-  // thanks for the fix Julian - https://github.com/Julian-AT
   const startAnimation = useCallback(() => {
-    const word = words[words.indexOf(currentWord) + 1] || words[0];
-    setCurrentWord(word);
+    const wordIndex = words.indexOf(currentWord);
+    const nextWord = wordIndex === words.length - 1 ? words[0] : words[wordIndex + 1];
+    setCurrentWord(nextWord);
     setIsAnimating(true);
   }, [currentWord, words]);
 
@@ -74,7 +74,7 @@ export const FlipWords = ({
             }}
             className="inline-block"
           >
-            {letter}
+            {letter === " " ? "\u00A0" : letter}
           </motion.span>
         ))}
       </motion.div>

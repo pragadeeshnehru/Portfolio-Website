@@ -5,112 +5,112 @@ export default function Gallery() {
         Artworks
       </h1>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-2 ">
-        <div class="grid gap-2">
-          <div class="relative image-container">
+        <div className="grid gap-2">
+          <div className="relative image-container">
             <img
-              class="w-full h-full object-cover"
-              src="../public/art-images/elden-lord.jpg"
+              className="w-full h-full object-cover"
+              src="/art-images/elden-lord.jpg"
               alt=""
             />
-            <div class="overlay-text">Love over Power.</div>
+            <div className="overlay-text">Love over Power.</div>
           </div>
-          <div class="relative image-container">
+          <div className="relative image-container">
             <img
-              class="w-full h-full object-cover"
-              src="../public/art-images/guts-griffith.jpg"
+              className="w-full h-full object-cover"
+              src="/art-images/guts-griffith.jpg"
               alt=""
             />
-            <div class="overlay-text">The greatest nemesis.</div>
+            <div className="overlay-text">The greatest nemesis.</div>
           </div>
-          <div class="relative image-container">
+          <div className="relative image-container">
             <img
-              class="w-full h-full object-cover"
-              src="../public/art-images/gal-gadot.jpg"
+              className="w-full h-full object-cover"
+              src="/art-images/gal-gadot.jpg"
               alt=""
             />
-            <div class="overlay-text">Timeless elegance.</div>
-          </div>
-        </div>
-        <div class="grid gap-2">
-          <div class="relative image-container">
-            <img
-              class="w-full h-full object-cover"
-              src="../public/art-images/butterfly-girl.jpeg"
-              alt=""
-            />
-            <div class="overlay-text">Perfectly imperfect!</div>
-          </div>
-          <div class="relative image-container">
-            <img
-              class="w-full h-full object-cover"
-              src="../public/art-images/jack-sparrow.jpg"
-              alt=""
-            />
-            <div class="overlay-text">Wheres' the rum gone?</div>
-          </div>
-          <div class="relative image-container">
-            <img
-              class="w-full h-full object-cover"
-              src="../public/art-images/walter-white.jpg"
-              alt=""
-            />
-            <div class="overlay-text">Say my name.</div>
+            <div className="overlay-text">Timeless elegance.</div>
           </div>
         </div>
-        <div class="grid gap-2">
-          <div class="relative image-container">
+        <div className="grid gap-2">
+          <div className="relative image-container">
             <img
-              class="w-full h-full object-cover"
-              src="../public/art-images/paul-atriedes.jpg"
+              className="w-full h-full object-cover"
+              src="/art-images/butterfly-girl.jpeg"
               alt=""
             />
-            <div class="overlay-text">The eye of the Messiah</div>
+            <div className="overlay-text">Perfectly imperfect!</div>
           </div>
-          <div class="relative image-container">
+          <div className="relative image-container">
             <img
-              class="w-full h-full object-cover"
-              src="../public/art-images/skull-knight.jpg"
+              className="w-full h-full object-cover"
+              src="/art-images/jack-sparrow.jpg"
               alt=""
             />
-            <div class="overlay-text">Struggle, endure, contend.</div>
+            <div className="overlay-text">Wheres' the rum gone?</div>
           </div>
-          <div class="relative image-container">
+          <div className="relative image-container">
             <img
-              class="w-full h-full object-cover"
-              src="../public/art-images/doom.jpg"
+              className="w-full h-full object-cover"
+              src="/art-images/walter-white.jpg"
               alt=""
             />
-            <div class="overlay-text">The only thing they fear is you.</div>
+            <div className="overlay-text">Say my name.</div>
           </div>
         </div>
-        <div class="grid gap-2">
-          <div class="relative image-container">
+        <div className="grid gap-2">
+          <div className="relative image-container">
             <img
-              class="w-full h-full object-cover"
-              src="../public/art-images/guts.jpg"
+              className="w-full h-full object-cover"
+              src="/art-images/paul-atriedes.jpg"
               alt=""
             />
-            <div class="overlay-text">
+            <div className="overlay-text">The eye of the Messiah</div>
+          </div>
+          <div className="relative image-container">
+            <img
+              className="w-full h-full object-cover"
+              src="/art-images/skull-knight.jpg"
+              alt=""
+            />
+            <div className="overlay-text">Struggle, endure, contend.</div>
+          </div>
+          <div className="relative image-container">
+            <img
+              className="w-full h-full object-cover"
+              src="/art-images/doom.jpg"
+              alt=""
+            />
+            <div className="overlay-text">The only thing they fear is you.</div>
+          </div>
+        </div>
+        <div className="grid gap-2">
+          <div className="relative image-container">
+            <img
+              className="w-full h-full object-cover"
+              src="/art-images/guts.jpg"
+              alt=""
+            />
+            <div className="overlay-text">
               I'd rather fight for my life than live it.
             </div>
           </div>
-          <div class="relative image-container">
+          <div className="relative image-container">
             <img
-              class="w-full h-full object-cover"
-              src="../public/art-images/assassin-ezio.jpg"
+              className="w-full h-full object-cover"
+              src="/art-images/assassin-ezio.jpg"
               alt=""
             />
-            <div class="overlay-text">
+            <div className="overlay-text">
               The world will not suffer if it ends too soon.
             </div>
           </div>
-          <div class="relative image-container">
+          <div className="relative image-container">
             <img
-              class="w-full h-full object-cover"
-              src="../public/art-images/thomas-shelby.jpg"
+              className="w-full h-full object-cover"
+              src="/art-images/thomas-shelby.jpg"
               alt=""
             />
-            <div class="overlay-text">Oh and there's a woman!</div>
+            <div className="overlay-text">Oh and there's a woman!</div>
           </div>
         </div>
       </div>
