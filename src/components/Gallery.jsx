@@ -1,6 +1,6 @@
 export default function Gallery() {
   return (
-    <div id="gallery">
+    <div id="gallery" className="container mx-auto px-6">
       <h1 className="text-white flex justify-end font-thin text-[2rem] sm:text-[2rem] md:text-[4rem] lg:text-[4rem] mb-3">
         Artworks
       </h1>

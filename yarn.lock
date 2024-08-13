@@ -2647,6 +2647,11 @@ tailwindcss@^3.4.4:
     resolve "^1.22.2"
     sucrase "^3.32.0"
 
+tech-stack-icons@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/tech-stack-icons/-/tech-stack-icons-2.0.3.tgz#5c3426c1eeb00d9d67caf3e0bf6ceccf3f9d8d42"
+  integrity sha512-dpLPTP+suf+6s5aqnWH+0HQmq94L9Y2gf+rP5paNvGDTrgROKF47Ec4eF+MXueQFqHuXZZKinsTGf9/6ZLvnPQ==
+
 text-table@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"

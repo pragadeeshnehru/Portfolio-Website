@@ -13,7 +13,7 @@ export default function App() {
   };
 
   return (
-    <div className="container comfortaa-light mx-auto px-6 text-white">
+    <div className="container comfortaa-light px-6 text-white">
       <div className="flex flex-row justify-end text-l sm:text-xl gap-1 sm:gap-3 mt-2 sm:mt-4">
         <button className="nav-button" onClick={() => scrollSection("about")}>About</button>
         <button className="nav-button" onClick={() => scrollSection("gallery")}>Works</button>
