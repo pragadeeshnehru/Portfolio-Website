@@ -89,6 +89,20 @@ body {
   font-style: normal;
 }
 
+.eb-garamond {
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.eb-garamond-bold {
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: italic;
+}
+
 .nav-button {
   width: 140px;
   height: auto;
@@ -195,16 +209,17 @@ body {
   display: flex;
   justify-content: center;
   padding: 20px;
-  transition: border 1s ease-;
   border: 5px solid transparent;
   border-radius: 10px;
-  background-clip: padding-box;
+  transition: border 1s ease-in;
 }
 
 .itemLeft:hover,
 .itemRight:hover {
+  transition: ease-in;
   transition-behavior: ease;
   border-image: linear-gradient(to right, teal, purple) 1;
+  border-radius: 10px;
 }
 
 .itemLeft {
@@ -248,3 +263,5 @@ body {
 .item8 {
   animation-delay: calc(30s / 8 * (8 - 8) * -1);
 }
+
+

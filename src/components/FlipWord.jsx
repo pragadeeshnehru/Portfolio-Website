@@ -11,7 +11,7 @@ export default function FlipWord() {
           words={words}
           duration={700}
           className="comfortaa-light"
-        />{" "}
+        />
         <br />
       </div>
     </div>

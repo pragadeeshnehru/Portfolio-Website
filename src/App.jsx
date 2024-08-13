@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Gallery from "./components/Gallery";
 import FlipWord from "./components/FlipWord";
 import About from "./components/About";
+import Contact from "./components/Contact";
 
 export default function App() {
   const scrollSection = (sectionId) => {
@@ -24,6 +25,7 @@ export default function App() {
       <FlipWord />
       <About />
       <Gallery/>
+      <Contact/>
     </div>
   );
 }
