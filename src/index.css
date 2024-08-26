@@ -168,7 +168,7 @@ body {
 .wrapper {
   margin-top: 2rem;
   width: 90%;
-  max-width: 1536px;
+  max-width: 100%;
   margin-inline: auto;
   height: 100px;
   position: relative;
@@ -209,17 +209,15 @@ body {
   display: flex;
   justify-content: center;
   padding: 20px;
-  border: 5px solid transparent;
+  border-width: 1px;
   border-radius: 10px;
-  transition: border 1s ease-in;
+  border : hidden;
+  transition: border 0.2s ease-in;
 }
 
 .itemLeft:hover,
 .itemRight:hover {
-  transition: ease-in;
-  transition-behavior: ease;
-  border-image: linear-gradient(to right, teal, purple) 1;
-  border-radius: 10px;
+  border : solid;
 }
 
 .itemLeft {
@@ -263,5 +261,3 @@ body {
 .item8 {
   animation-delay: calc(30s / 8 * (8 - 8) * -1);
 }
-
-
