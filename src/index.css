@@ -211,13 +211,13 @@ body {
   padding: 20px;
   border-width: 1px;
   border-radius: 10px;
-  border : hidden;
+  border: hidden;
   transition: border 0.2s ease-in;
 }
 
 .itemLeft:hover,
 .itemRight:hover {
-  border : solid;
+  border: solid;
 }
 
 .itemLeft {
