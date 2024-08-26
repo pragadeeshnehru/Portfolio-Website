@@ -12,7 +12,7 @@ export default function About() {
         </p>
         <img
           src="./glass.png"
-          className="h-96 object-contain transition-transform duration-500 ease-out transform hover:scale-110 hover:rotate-3 hidden md:block"
+          className="h-96 w-max object-contain transition-transform duration-500 ease-out transform hover:scale-110 hover:rotate-3 hidden md:block"
         />
       </div>
       <RevealOnScroll>
