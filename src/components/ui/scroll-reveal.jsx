@@ -10,10 +10,10 @@ export default function RevealOnScroll({ children }) {
         if (entry.isIntersecting) {
           setIsVisible(true);
         } else {
-          setIsVisible(false); // Reset visibility when out of view
+          setIsVisible(false); 
         }
       },
-      { threshold: 0.1 } // Adjust the threshold if needed
+      { threshold: 0.1 } 
     );
 
     scrollObserver.observe(ref.current);
