@@ -1,6 +1,5 @@
 import Header from "./components/Header";
 import Gallery from "./components/Gallery";
-import FlipWord from "./components/FlipWord";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Preloader from "./components/Preloader";
@@ -16,7 +15,7 @@ export default function App() {
 
   return (
     <div className=" comfortaa-light text-white">
-      <Preloader />
+      <Preloader className="fixed"/>
       <div className="flex flex-row justify-around text-l sm:text-xl gap-1 sm:gap-3 mt-2 sm:mt-4 text-gray-400 ">
         <button
           className="nav-button hover:text-white"

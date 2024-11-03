@@ -10,6 +10,7 @@ import {
   IconTerminal2,
 } from "@tabler/icons-react";
 import { FloatingDock } from "./ui/floating-dock";
+import QuoteBox from "./QuoteBox";
 
 export default function Contact() {
   const links = [
@@ -45,7 +46,8 @@ export default function Contact() {
   ];
 
   return (
-    <footer id="contact" className="mt-32 w-full bg-transparent p-8 text-white">
+    <footer id="contact" className="mt-8 w-full bg-transparent p-8 text-white">
+      <QuoteBox />
       <FloatingDock
         items={links}
         desktopClassName={"justify-center w-fit text-white bg-transparent"}
