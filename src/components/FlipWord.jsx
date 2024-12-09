@@ -2,7 +2,7 @@ import React from "react";
 import { FlipWords } from "./ui/flip-words";
 
 export default function FlipWord() {
-  const words = ["Web Developer", "UX Designer", "Artist", "Writer"];
+  const words = ["Web Dev", "UX Designer", "Artist", "Writer"];
 
   return (
     <div className="flex items-center justify-start container mx-auto px-0 sm:h-[4rem] md:h-[8rem] lg:h-[10rem]">

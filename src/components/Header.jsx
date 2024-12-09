@@ -1,8 +1,8 @@
 import FlipWord from "./FlipWord";
 
-export default function Header() {
+export default function Header({classNames}) {
   return (
-    <div className="text-white comfortaa-light ">
+    <div className="text-white comfortaa-light " >
       <h1 className="comfortaa-light text-white font-thin text-[2.5rem] sm:text-[2.5rem] md:text-[3.5rem] lg:text-[5rem] leading-tight sm:leading-snug md:leading-normal lg:leading-relaxed break-words mb-0">
         Hi,
       </h1>
