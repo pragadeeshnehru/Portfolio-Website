@@ -36,10 +36,10 @@ const ImageWithOverlay = ({ src, alt, text }) => {
 
 export default function Gallery() {
     return (
-        <div id="gallery" className="mx-auto px-6">
+        <div id="gallery" className="mx-auto px-6 py-16 rounded-t-[5rem] border-t-4  border-rose-600 ">
             <RevealOnScroll>
-                <h1 className="text-white flex justify-center font-thin text-[2rem] sm:text-[2rem] md:text-[4rem] lg:text-[4rem] mb-8">
-                    Artworks
+                <h1 className=" text-white flex justify-center font-thin text-[2rem] sm:text-[2rem] md:text-[4rem] lg:text-[4rem] mb-8">
+                    ARTWORKS
                 </h1>
             </RevealOnScroll>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

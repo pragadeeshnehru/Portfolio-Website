@@ -5,7 +5,7 @@ export default function QuoteBox() {
   const author = "- Friedrich Nietzsche";
 
   return (
-    <div className=" p-8 m-8 shadow-2xl text-center ">
+    <div className=" p-8 m-8 shadow-inner shadow-rose-600 text-center rounded-3xl">
       <p className="text-xl text-white italic">{quote}</p>
       <p className="mt-4 text-sm text-white font-semibold">{author}</p>
     </div>
