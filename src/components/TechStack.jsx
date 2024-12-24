@@ -5,7 +5,7 @@ export default function TechStack({ classes }) {
     <div className={`p-6 ${classes}`}>
       {/* Expertise Section */}
       <Section title="My Expertise">
-        <div className="flex flex-wrap gap-0 w-full justify-evenly ">
+        <div className="flex flex-wrap gap-12 w-full justify-evenly ">
           <StackInfo name="reactjs" info="ReactJS" />
           <StackInfo name="nextjs" info="NextJS" className="invert" />
           <StackInfo name="tailwindcss" info="Tailwind" />
