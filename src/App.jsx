@@ -4,6 +4,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import RevealOnScroll from "./components/ui/scroll-reveal";
 import { AnimatedCards } from "./components/AnimatedCards";
+import MediumArticles from "./components/MediumArticles";
 
 export default function App() {
   const scrollSection = (sectionId) => {
@@ -53,6 +54,7 @@ export default function App() {
 
       <About />
       <Gallery />
+      <MediumArticles />
       <Contact />
     </div>
   );

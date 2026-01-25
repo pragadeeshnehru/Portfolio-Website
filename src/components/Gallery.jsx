@@ -1,6 +1,5 @@
 import RevealOnScroll from "./ui/scroll-reveal";
 
-// Array of image data
 const images = [
     [
         { src: "/art-images/elden-lord.jpg", alt: "Elden Lord", text: "Love over Power." },
@@ -22,12 +21,28 @@ const images = [
         { src: "/art-images/assassin-ezio.jpg", alt: "Assassin Ezio", text: "The world will not suffer if it ends too soon." },
         { src: "/art-images/thomas-shelby.jpg", alt: "Thomas Shelby", text: "Oh and there's a woman!" },
     ],
+    [
+        { src: "/art-images/sekiro.jpg", alt: "Sekiro", text: "Hesitaion is defeat"},
+        
+        { src: "/art-images/hiphop.jpg", alt: "Hip Hop", text: "If I told you a flower bloomed in a dark room would you trust it?"},
+    ],
+    [
+        { src: "/art-images/berserker.jpg", alt: "Berserker Armour", text: "A beast of darkness"},
+        
+    ],
+    [
+        { src: "/art-images/itadori.jpg", alt: "Itadori Yuji", text: "Hesitaion is defeat"},
+    ],
+    [
+        { src: "/art-images/breakingbad.jpg", alt: "Breaking Bad", text: "Live free or die."},
+
+    ]
+
 ];
 
-// Custom component for each image
 const ImageWithOverlay = ({ src, alt, text }) => {
     return (
-        <div className="relative image-container rounded-3xl">
+        <div className="relative image-container rounded-xl">
             <img className="w-full h-full object-cover" src={src} alt={alt} />
             <div className="overlay-text">{text}</div>
         </div>
