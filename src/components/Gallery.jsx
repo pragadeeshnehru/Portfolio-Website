@@ -27,11 +27,11 @@ const images = [
         { src: "/art-images/hiphop.jpg", alt: "Hip Hop", text: "If I told you a flower bloomed in a dark room would you trust it?"},
     ],
     [
-        { src: "/art-images/berserker.jpg", alt: "Berserker Armour", text: "A beast of darkness"},
+        { src: "/art-images/berserker.jpg", alt: "Berserker Armour", text: "A beast of darkness."},
         
     ],
     [
-        { src: "/art-images/itadori.jpg", alt: "Itadori Yuji", text: "Hesitaion is defeat"},
+        { src: "/art-images/itadori.jpg", alt: "Itadori Yuji", text: "Hesitation is defeat."},
     ],
     [
         { src: "/art-images/breakingbad.jpg", alt: "Breaking Bad", text: "Live free or die."},
@@ -54,8 +54,9 @@ export default function Gallery() {
         <div id="gallery" className="mx-auto px-6 py-16 rounded-t-[5rem] border-t-4  border-rose-600 ">
             <RevealOnScroll>
                 <h1 className=" text-white flex justify-center font-thin text-[2rem] sm:text-[2rem] md:text-[4rem] lg:text-[4rem] mb-8">
-                    ARTWORKS
+                    WORKS
                 </h1>
+                <p className="w-full flex items-center justify-center text-center align-middle text-2xl mb-6 font-semibold text-white">Artworks</p>
             </RevealOnScroll>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {images.map((row, rowIndex) => (
