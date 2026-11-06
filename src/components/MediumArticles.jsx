@@ -20,7 +20,7 @@ export default function MediumArticles() {
       <div className="max-w-7xl mx-auto px-6">
         <RevealOnScroll>
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-md font-semibold text-white sm:text-2xl">
+            <h2 className="text-md font-semibold sm:text-2xl grad-text">
               Checkout my Medium Articles
             </h2>
 
@@ -28,7 +28,7 @@ export default function MediumArticles() {
               href="https://medium.com/@pragadeeshnehru"
               target="_blank"
               rel="noreferrer"
-              className="text-sm text-white/70 hover:text-white transition"
+              className="text-sm text-white/85 hover:text-white transition"
             >
               View all →
             </a>
@@ -36,9 +36,9 @@ export default function MediumArticles() {
         </RevealOnScroll>
 
         {loading ? (
-          <p className="text-white/60">Loading articles...</p>
+          <p className="text-white/80">Loading articles...</p>
         ) : articles?.length === 0 ? (
-          <p className="text-white/60">No articles found.</p>
+          <p className="text-white/80">No articles found.</p>
         ) : (
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {articles.map((a, i) => (
@@ -47,9 +47,9 @@ export default function MediumArticles() {
                 href={a.link}
                 target="_blank"
                 rel="noreferrer"
-                className="group rounded-2xl border border-white/10 bg-white/5 p-5 hover:bg-white/10 transition"
+                className="group glow-card rounded-2xl p-5"
               >
-                <p className="text-xs text-white/50 mb-2">
+                <p className="text-xs text-white/70 mb-2">
                   {new Date(a.pubDate).toDateString()}
                 </p>
 
@@ -57,7 +57,7 @@ export default function MediumArticles() {
                   {a.title}
                 </h3>
 
-                <p className="mt-3 text-sm text-white/60">Read on Medium →</p>
+                <p className="mt-3 text-sm text-white/80">Read on Medium →</p>
               </a>
             ))}
           </div>

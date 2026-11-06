@@ -50,9 +50,9 @@ function Section({ title, children }) {
 
 function StackInfo({ name, info, className }) {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center stack-item">
       <StackIcon name={name} className={`mb-4 ${className} scale-[0.75] hover:scale-100 delay-100 duration-200 ease-in-out`} />
-      <p className="text-gray-500 text-center font-thin text-sm">
+      <p className="text-white/80 text-center font-light text-sm">
         {info}
       </p>
     </div>
