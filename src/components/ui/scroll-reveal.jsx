@@ -1,36 +1,23 @@
-import React, { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
-export default function RevealOnScroll({ children }) {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef(null);
+const dirs = {
+  up: { y: 60, x: 0 },
+  left: { x: -60, y: 0 },
+  right: { x: 60, y: 0 },
+  none: { x: 0, y: 0 },
+};
 
-  useEffect(() => {
-    const scrollObserver = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false); 
-        }
-      },
-      { threshold: 0.1 } 
-    );
-
-    scrollObserver.observe(ref.current);
-
-    return () => {
-      if (ref.current) {
-        scrollObserver.unobserve(ref.current);
-      }
-    };
-  }, []);
-
-  const classes = `transition-opacity duration-1000 
-    ${isVisible ? "opacity-100" : "opacity-0"}`;
-
+export default function RevealOnScroll({ children, direction = "up", delay = 0, className = "" }) {
+  const d = dirs[direction] || dirs.up;
   return (
-    <div ref={ref} className={classes}>
+    <motion.div
+      className={className}
+      initial={{ opacity: 0, scale: 0.96, filter: "blur(8px)", ...d }}
+      whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)", x: 0, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.9, delay, ease: [0.22, 1, 0.36, 1] }}
+    >
       {children}
-    </div>
+    </motion.div>
   );
 }

@@ -11,7 +11,7 @@ export default {
   ],
   theme: {
     fontFamily : {
-      display: ["Comfortaa", "cursive"],
+      display: ["Outfit", "sans-serif"],
     },
     extend: {},
   },

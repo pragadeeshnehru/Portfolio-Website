@@ -51,23 +51,24 @@ const ImageWithOverlay = ({ src, alt, text }) => {
 
 export default function Gallery() {
     return (
-        <div id="gallery" className="mx-auto px-6 py-16 rounded-t-[5rem] border-t-4  border-rose-600 ">
+        <div id="gallery" className="mx-auto px-6 py-16 section-edge ">
             <RevealOnScroll>
-                <h1 className=" text-white flex justify-center font-thin text-[2rem] sm:text-[2rem] md:text-[4rem] lg:text-[4rem] mb-8">
+                <h1 className="glow-title flex justify-center font-thin text-[2rem] sm:text-[2rem] md:text-[4rem] lg:text-[4rem] mb-8">
                     WORKS
                 </h1>
-                <p className="w-full flex items-center justify-center text-center align-middle text-2xl mb-6 font-semibold text-white">Artworks</p>
+                <p className="w-full flex items-center justify-center text-center align-middle text-2xl mb-6 font-semibold text-white/80">Artworks</p>
             </RevealOnScroll>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {images.map((row, rowIndex) => (
                     <div key={rowIndex} className="grid gap-4">
                         {row.map((image, index) => (
-                            <ImageWithOverlay
-                                key={index}
-                                src={image.src}
-                                alt={image.alt}
-                                text={image.text}
-                            />
+                            <RevealOnScroll key={index} delay={(index % 3) * 0.12} direction={rowIndex % 2 ? "right" : "left"}>
+                                <ImageWithOverlay
+                                    src={image.src}
+                                    alt={image.alt}
+                                    text={image.text}
+                                />
+                            </RevealOnScroll>
                         ))}
                     </div>
                 ))}
