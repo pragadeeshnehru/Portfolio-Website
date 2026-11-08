@@ -577,20 +577,20 @@ section[id], footer[id] { scroll-margin-top: 95px; }
 
 /* Torn brush edges: photo bands tear into the plain sections (unfair.so style). */
 :root {
-    --tear-both: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 400' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M0 80 90 55 180 90 270 60 360 85 450 58 540 88 630 62 720 82 810 56 900 86 990 60 1080 84 1170 58 1260 88 1350 64 1440 80 1440 320 1350 345 1260 312 1170 342 1080 316 990 344 900 314 810 340 720 318 630 344 540 312 450 340 360 315 270 342 180 312 90 340 0 320 Z'/%3E%3C/svg%3E");
-    --tear-bottom: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 500' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M0 0 1440 0 1440 420 1350 448 1260 415 1170 452 1080 420 990 446 900 418 810 450 720 424 630 452 540 416 450 446 360 420 270 450 180 424 90 452 0 428 Z'/%3E%3C/svg%3E");
+    --tear-both: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 400' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M0 55 Q45 30 90 52 T180 40 T270 58 T360 42 T450 56 T540 38 T630 54 T720 44 T810 58 T900 40 T990 56 T1080 42 T1170 54 T1260 44 T1350 56 L1440 44 1440 350 Q1395 372 1350 352 T1260 362 T1170 346 T1080 360 T990 348 T900 364 T810 350 T720 362 T630 348 T540 364 T450 350 T360 362 T270 348 T180 360 T90 348 L0 356 Z'/%3E%3C/svg%3E");
+    --tear-bottom: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 500' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M0 0 1440 0 1440 440 Q1395 465 1350 445 T1260 458 T1170 440 T1080 460 T990 442 T900 462 T810 444 T720 460 T630 442 T540 462 T450 444 T360 460 T270 444 T180 458 T90 442 L0 456 Z'/%3E%3C/svg%3E");
 }
 .band { position: relative; isolation: isolate; }
 .band::before {
     content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
     background-image: var(--band-img); background-size: cover;
     background-position: center calc(50% + var(--bgy, 0px));
-    opacity: .18;
+    opacity: .2;
     -webkit-mask-image: var(--tear-both); mask-image: var(--tear-both);
     -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
     -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
 }
-:root[data-theme="dark"] .band::before { opacity: .24; }
+:root[data-theme="dark"] .band::before { opacity: .28; }
 
 /* About: editorial index of interests; glyph sigils replace photos. */
 .personas { grid-template-columns: 1fr; gap: 0; margin-top: 1.4rem; border-top: 1px solid rgba(var(--fg-rgb),.12); }
