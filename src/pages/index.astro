@@ -27,16 +27,17 @@ const GLYPHS = {
     pen: 'M3 17 16.5 3.5a2.8 2.8 0 0 1 4 4L7 21H3Zm1 6h17v-2H9Z',
     palette: 'M12 2C6.5 2 2 6.1 2 11.3 2 17.2 6.9 22 12.5 22c2.5 0 3.5-2.2 2-3.7-.9-.9-.4-2.3 1-2.3H18c3 0 4-2.4 4-5 0-5-4.5-9-10-9ZM7 8a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm6-2a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1 0-3Zm5 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3ZM5 13a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1 0-3Z',
     rocket: 'M21 1c-7 1-13 5-13 10 0 3 2 5 5 5 5 0 7-8 8-15ZM7 14c-6 0-2 6-7 8 8 3 13-3 7-8Z',
+    book: 'M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2V3Zm20 0h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7V3Z',
 };
 const personas = [
     { role: 'Developer', glyph: GLYPHS.code,
-      text: 'With a love for reading and writing, I explore topics ranging from philosophy to fiction. I enjoy expanding my technical skills by learning about machine learning to create meaningful and practical solutions.' },
+      text: 'I work on designing scalable web apps and on AI, and I am starting my journey into embedded systems.' },
     { role: 'Writer', glyph: GLYPHS.pen,
-      text: 'I strive to blend creativity with logic in my work. Writing fiction and philosophy inspires me to build thoughtful solutions, whether through code or learning new technologies like machine learning.' },
+      text: 'I write about philosophy, science, fiction, psychology and tech.' },
     { role: 'Artist', glyph: GLYPHS.palette,
-      text: 'Curious by nature, I explore diverse interests, from philosophy and fiction writing to learning a bit of machine learning. My goal is to continuously improve my skills and create meaningful, user-friendly solutions.' },
-    { role: 'Lifelong Learner', glyph: GLYPHS.rocket,
-      text: 'I am a developer with a passion for combining creativity and technology. Whether it is writing fiction, exploring philosophy, or learning about machine learning, I strive to bring thoughtful solutions to every project I work on.' },
+      text: 'I am an artist - I draw and paint, all sorts - and I love to dance.' },
+    { role: 'Reader', glyph: GLYPHS.book,
+      text: 'I am an avid reader of literary fiction.' },
 ];
 
 const panels = [
@@ -131,6 +132,13 @@ const socials = [
         <button data-section="craft" aria-label="Craft"><i></i><span>Craft</span></button>
         <button data-section="contact" aria-label="Contact"><i></i><span>Contact</span></button>
     </nav>
+    <nav class="nav-pill mobile-nav" id="nav" aria-label="Page sections">
+        <button class="nav-link" data-go="about" type="button">About</button>
+        <button class="nav-link" data-go="works" type="button">Art</button>
+        <button class="nav-link" data-go="writing" type="button">Writing</button>
+        <button class="nav-link" data-go="craft" type="button">Craft</button>
+        <button class="nav-link" data-go="contact" type="button">Contact</button>
+    </nav>
     <button class="theme-toggle" id="themeToggle" aria-label="Switch colour mode" type="button">Mode</button>
 
     <section class="hero" id="hero">
@@ -163,7 +171,7 @@ const socials = [
         <header class="m-head rv">
             <span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10ZM3 23v-3a9 9 0 0 1 18 0v3Z" /></svg></span>
             <h2 class="m-title ink">ABOUT</h2>
-            <p class="m-sub">developer, writer, artist - the struggler behind the work</p>
+            <p class="m-sub">developer, writer, artist, reader - the struggler behind the work</p>
         </header>
         <div class="personas">
             {personas.map((p, i) => (
@@ -334,7 +342,7 @@ const socials = [
             progress.style.transform = 'scaleX(' + (h > 0 ? y / h : 0) + ')';
             // Works covers the art, writing and craft sections beneath that label.
             const marker = y + Math.min(window.innerHeight * .32, 240);
-            const groups = ['about', 'works', 'contact'];
+            const groups = ['about', 'works', 'writing', 'craft', 'contact'];
             let current = '';
             for (const id of groups) {
                 const section = document.getElementById(id);
