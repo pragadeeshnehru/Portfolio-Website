@@ -511,3 +511,30 @@ section[id], footer[id] { scroll-margin-top: 95px; }
 @media(max-width:640px) { .art-stage { grid-template-columns: 1fr; grid-template-rows: minmax(0, 1fr) auto; gap: 16px; padding: 60px 18px 22px; } .art-stage img { max-height: calc(92svh - 240px); } .art-caption { text-align: center; padding: 0; } .art-caption h2 { margin-bottom: .5rem; } .art-caption p { margin: 0; font-size: .85rem; } }
 
 .hero-name { font-style: italic; padding-inline: .12em; }
+
+/* Alternating editorial alignment with a right-edge section guide. */
+@media(min-width:900px) {
+ .movement { padding-left: 2rem; padding-right: 5.5rem; }
+ .movement .m-head { text-align: left; max-width: 620px; margin-right: auto; margin-left: 0; }
+ .movement .section-icon { margin-left: 0; margin-right: auto; }
+ #works .m-head, #craft .m-head { text-align: right; margin-left: auto; margin-right: 0; }
+ #works .section-icon, #craft .section-icon { margin-left: auto; margin-right: 0; }
+ #about .personas { grid-template-columns: 1.1fr .9fr; }
+ #works .panels { gap: 2rem; }
+ #writing .articles { grid-template-columns: 1.1fr .9fr; }
+ .tech-group h3 { text-align: left; }
+ .tech-row { justify-content: flex-start; }
+ .foot { text-align: left; padding-inline: max(3rem, calc((100vw - 1000px)/2)); align-items: flex-start; }
+ .foot .m-head { text-align: left; }
+ .foot .section-icon { margin-left: 0; }
+ .foot .quote { text-align: left; margin-left: 0; }
+ .foot .dock { justify-content: flex-start; }
+}
+.section-rail { position: fixed; right: 12px; top: 50%; transform: translateY(-50%); z-index: 43; display: grid; gap: 2px; padding: 8px 4px; border: 1px solid rgba(var(--fg-rgb),.12); border-radius: 28px; background: rgba(var(--bg-rgb),.8); backdrop-filter: blur(10px); }
+.section-rail button { display: flex; align-items: center; justify-content: flex-end; gap: 8px; border: 0; background: none; color: rgba(var(--fg-rgb),.65); min-height: 44px; padding: 0 10px; cursor: pointer; font: 600 .65rem var(--body); }
+.section-rail i { display: block; width: 5px; height: 5px; border-radius: 50%; background: currentColor; order: 2; transition: height .3s, background .3s; }
+.section-rail span { width: 0; overflow: hidden; opacity: 0; transition: opacity .2s; }
+.section-rail button.is-active span, .section-rail:hover span, .section-rail:focus-within span { width: 47px; opacity: 1; }
+.section-rail button.is-active { color: var(--blood); }
+.section-rail button.is-active i { height: 22px; border-radius: 4px; }
+@media(max-width:899px) { .section-rail { display: none; } .movement .m-head { text-align: left; } .movement .section-icon { margin-left: 0; } }
