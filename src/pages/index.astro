@@ -105,6 +105,7 @@ const socials = [
     <div class="grain" aria-hidden="true"></div>
     <div class="bg-anim" aria-hidden="true">
         <div class="pattern-base"></div>
+        <div class="pattern-patches"><i></i><i></i><i></i></div>
         <div class="pattern-light" id="patternLight"></div>
         <div class="mobile-aura"></div>
         <div class="bg-glow one"></div>
@@ -364,6 +365,8 @@ const socials = [
             patternFrame = requestAnimationFrame(() => {
                 pattern.style.setProperty('--px', px + 'px');
                 pattern.style.setProperty('--py', py + 'px');
+                pattern.parentElement.style.setProperty('--px', px + 'px');
+                pattern.parentElement.style.setProperty('--py', py + 'px');
                 patternFrame = 0;
             });
         }, { passive: true });
