@@ -122,7 +122,7 @@ const socials = [
         <svg class="brand-watermark" viewBox="0 0 100 100" aria-hidden="true"><path d={BRAND} /></svg>
         <p class="kicker rv">Hi, I am</p>
         <h1 class="hero-name rv">PRAGADEESH</h1>
-        <p class="hero-sub rv">a stage for <span class="flip" id="flip">ART</span></p>
+        <p class="hero-sub rv">I am <span class="flip" id="flip">an artist</span></p>
         <p class="scroll-cue rv" aria-hidden="true">scroll &#9662;</p>
     </section>
 
@@ -255,7 +255,275 @@ const socials = [
     }
 
     // flip words
-    const words = ['ART', 'CODE', 'WRITING'];
+    const words = ['an artist', 'a developer', 'a writer'];
+    const flip = document.getElementById('flip');
+    let wi = 0;
+    if (!reduce) setInterval(() => {
+        wi = (wi + 1) % words.length;
+        flip.textContent = words[wi];
+        flip.classList.remove('swap');
+        void flip.offsetWidth;
+        flip.classList.add('swap');
+    }, 2200);
+
+    // nav + progress
+import '../styles/global.css';
+import react from '../icons/react.svg?raw';
+import nextdotjs from '../icons/nextdotjs.svg?raw';
+import tailwindcss from '../icons/tailwindcss.svg?raw';
+import threedotjs from '../icons/threedotjs.svg?raw';
+import nodedotjs from '../icons/nodedotjs.svg?raw';
+import gnubash from '../icons/gnubash.svg?raw';
+import python from '../icons/python.svg?raw';
+import cplusplus from '../icons/cplusplus.svg?raw';
+import csharp from '../icons/csharp.svg?raw';
+import openjdk from '../icons/openjdk.svg?raw';
+import javascript from '../icons/javascript.svg?raw';
+import mysql from '../icons/mysql.svg?raw';
+import mongodb from '../icons/mongodb.svg?raw';
+import youtube from '../icons/youtube.svg?raw';
+import linkedin from '../icons/linkedin.svg?raw';
+import x from '../icons/x.svg?raw';
+import github from '../icons/github.svg?raw';
+
+const BRAND = 'M50 2 L57 22 L74 8 L68 32 L92 24 L76 46 L94 68 L70 64 L72 92 L54 72 L50 98 L46 72 L28 92 L30 64 L6 68 L24 46 L8 24 L32 32 L26 8 L43 22 Z';
+
+const ATOM = '<circle cx="100" cy="100" r="24" fill="none" stroke="#ece5d8" stroke-opacity=".16" stroke-width="1"/><circle cx="100" cy="100" r="36" fill="none" stroke="#ece5d8" stroke-opacity=".16" stroke-width="1"/><circle cx="100" cy="100" r="48" fill="none" stroke="#ece5d8" stroke-opacity=".16" stroke-width="1"/><circle cx="100" cy="100" r="60" fill="none" stroke="#ece5d8" stroke-opacity=".16" stroke-width="1"/><circle cx="100" cy="100" r="72" fill="none" stroke="#ece5d8" stroke-opacity=".16" stroke-width="1"/><circle cx="100" cy="100" r="84" fill="none" stroke="#ece5d8" stroke-opacity=".16" stroke-width="1"/><g class="nuc"><circle cx="100" cy="100" r="13" fill="#d8a84e" opacity=".08"/><circle cx="100" cy="100" r="5" fill="#d8a84e"/><circle cx="106.5" cy="103.8" r="4" fill="#d8a84e"/><circle cx="100.0" cy="107.5" r="4" fill="#ece5d8"/><circle cx="93.5" cy="103.8" r="4" fill="#d8a84e"/><circle cx="93.5" cy="96.2" r="4" fill="#ece5d8"/><circle cx="100.0" cy="92.5" r="4" fill="#d8a84e"/><circle cx="106.5" cy="96.2" r="4" fill="#ece5d8"/></g><circle class="rad r1" cx="100" cy="100" r="18" fill="none" stroke="#d8a84e" stroke-width="1"/><circle class="rad r2" cx="100" cy="100" r="18" fill="none" stroke="#d8a84e" stroke-width="1"/><circle class="rad r3" cx="100" cy="100" r="18" fill="none" stroke="#d8a84e" stroke-width="1"/><g class="sh sh1"><circle class="pe" cx="124.0" cy="100.0" r="3" fill="#d8a84e"/><circle cx="76.0" cy="100.0" r="1.8" fill="#ece5d8" opacity=".45"/></g><g class="sh sh2"><circle class="pe" cx="136.0" cy="100.0" r="3" fill="#d8a84e"/><circle cx="125.5" cy="125.5" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="100.0" cy="136.0" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="74.5" cy="125.5" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="64.0" cy="100.0" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="74.5" cy="74.5" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="100.0" cy="64.0" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="125.5" cy="74.5" r="1.8" fill="#ece5d8" opacity=".45"/></g><g class="sh sh3"><circle class="pe" cx="148.0" cy="100.0" r="3" fill="#d8a84e"/><circle cx="145.1" cy="116.4" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="136.8" cy="130.9" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="124.0" cy="141.6" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="108.3" cy="147.3" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="91.7" cy="147.3" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="76.0" cy="141.6" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="63.2" cy="130.9" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="54.9" cy="116.4" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="52.0" cy="100.0" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="54.9" cy="83.6" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="63.2" cy="69.1" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="76.0" cy="58.4" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="91.7" cy="52.7" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="108.3" cy="52.7" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="124.0" cy="58.4" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="136.8" cy="69.1" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="145.1" cy="83.6" r="1.8" fill="#ece5d8" opacity=".45"/></g><g class="sh sh4"><circle class="pe" cx="160.0" cy="100.0" r="3" fill="#d8a84e"/><circle cx="158.8" cy="111.7" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="155.4" cy="123.0" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="149.9" cy="133.3" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="142.4" cy="142.4" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="133.3" cy="149.9" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="123.0" cy="155.4" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="111.7" cy="158.8" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="100.0" cy="160.0" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="88.3" cy="158.8" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="77.0" cy="155.4" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="66.7" cy="149.9" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="57.6" cy="142.4" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="50.1" cy="133.3" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="44.6" cy="123.0" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="41.2" cy="111.7" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="40.0" cy="100.0" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="41.2" cy="88.3" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="44.6" cy="77.0" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="50.1" cy="66.7" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="57.6" cy="57.6" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="66.7" cy="50.1" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="77.0" cy="44.6" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="88.3" cy="41.2" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="100.0" cy="40.0" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="111.7" cy="41.2" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="123.0" cy="44.6" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="133.3" cy="50.1" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="142.4" cy="57.6" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="149.9" cy="66.7" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="155.4" cy="77.0" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="158.8" cy="88.3" r="1.8" fill="#ece5d8" opacity=".45"/></g><g class="sh sh5"><circle class="pe" cx="172.0" cy="100.0" r="3" fill="#d8a84e"/><circle cx="167.7" cy="124.6" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="155.2" cy="146.3" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="136.0" cy="162.4" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="112.5" cy="170.9" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="87.5" cy="170.9" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="64.0" cy="162.4" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="44.8" cy="146.3" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="32.3" cy="124.6" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="28.0" cy="100.0" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="32.3" cy="75.4" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="44.8" cy="53.7" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="64.0" cy="37.6" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="87.5" cy="29.1" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="112.5" cy="29.1" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="136.0" cy="37.6" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="155.2" cy="53.7" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="167.7" cy="75.4" r="1.8" fill="#ece5d8" opacity=".45"/></g><g class="sh sh6"><circle class="pe" cx="184.0" cy="100.0" r="3" fill="#d8a84e"/><circle cx="142.0" cy="172.7" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="58.0" cy="172.7" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="16.0" cy="100.0" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="58.0" cy="27.3" r="1.8" fill="#ece5d8" opacity=".45"/><circle cx="142.0" cy="27.3" r="1.8" fill="#ece5d8" opacity=".45"/></g>';
+
+const personas = [
+    { img: '/img/dev.webp', alt: 'Pragadeesh, developer', title: 'Software Developer and Curious Learner',
+      text: 'With a love for reading and writing, I explore topics ranging from philosophy to fiction. I enjoy expanding my technical skills by learning about machine learning to create meaningful and practical solutions.' },
+    { img: '/img/writer.webp', alt: 'Writing desk', title: 'Creative Technologist and Writer',
+      text: 'I strive to blend creativity with logic in my work. Writing fiction and philosophy inspires me to build thoughtful solutions, whether through code or learning new technologies like machine learning.' },
+    { img: '/img/artist.webp', alt: 'Artwork in progress', title: 'Developer, Artist, and Lifelong Learner',
+      text: 'Curious by nature, I explore diverse interests, from philosophy and fiction writing to learning a bit of machine learning. My goal is to continuously improve my skills and create meaningful, user-friendly solutions.' },
+    { img: '/img/designer.webp', alt: 'Design work', title: 'Writer and Tech Enthusiast',
+      text: 'I am a developer with a passion for combining creativity and technology. Whether it is writing fiction, exploring philosophy, or learning about machine learning, I strive to bring thoughtful solutions to every project I work on.' },
+];
+
+const panels = [
+    { src: '/art/guts.webp', title: 'Guts', quote: "I'd rather fight for my life than live it." },
+    { src: '/art/hiphop.webp', title: 'Hip Hop', quote: 'If I told you a flower bloomed in a dark room would you trust it?' },
+    { src: '/art/skull-knight.webp', title: 'Skull Knight', quote: 'Struggle, endure, contend.' },
+    { src: '/art/butterfly-girl.webp', title: 'Butterfly Girl', quote: 'Perfectly imperfect!' },
+    { src: '/art/guts-griffith.webp', title: 'Guts & Griffith', quote: 'The greatest nemesis.' },
+    { src: '/art/itadori.webp', title: 'Itadori Yuji', quote: 'Hesitation is defeat.' },
+    { src: '/art/elden-lord.webp', title: 'Elden Lord', quote: 'Love over Power.' },
+    { src: '/art/gal-gadot.webp', title: 'Gal Gadot', quote: 'Timeless elegance.' },
+    { src: '/art/jack-sparrow.webp', title: 'Jack Sparrow', quote: "Where's the rum gone?" },
+    { src: '/art/walter-white.webp', title: 'Walter White', quote: 'Say my name.' },
+    { src: '/art/paul-atriedes.webp', title: 'Paul Atreides', quote: 'The eye of the Messiah.' },
+    { src: '/art/doom.webp', title: 'Doom', quote: 'The only thing they fear is you.' },
+    { src: '/art/assassin-ezio.webp', title: 'Assassin Ezio', quote: 'The world will not suffer if it ends too soon.' },
+    { src: '/art/thomas-shelby.webp', title: 'Thomas Shelby', quote: "Oh and there's a woman!" },
+    { src: '/art/sekiro.webp', title: 'Sekiro', quote: 'Hesitation is defeat.' },
+    { src: '/art/berserker.webp', title: 'Berserker Armour', quote: 'A beast of darkness.' },
+    { src: '/art/breakingbad.webp', title: 'Breaking Bad', quote: 'Live free or die.' },
+];
+
+const tech = [
+    { group: 'My Expertise', items: [
+        { svg: react, name: 'ReactJS' }, { svg: nextdotjs, name: 'NextJS' }, { svg: tailwindcss, name: 'Tailwind' },
+        { svg: threedotjs, name: 'Three.js' }, { svg: nodedotjs, name: 'Node.js' } ] },
+    { group: 'Languages', items: [
+        { svg: gnubash, name: 'Shell' }, { svg: python, name: 'Python' }, { svg: cplusplus, name: 'C++' },
+        { svg: csharp, name: 'C#' }, { svg: openjdk, name: 'Java' }, { svg: javascript, name: 'JavaScript' } ] },
+    { group: 'Databases', items: [
+        { svg: mysql, name: 'MySQL' }, { svg: mongodb, name: 'MongoDB' } ] },
+];
+
+const socials = [
+    { svg: youtube, name: 'YouTube', href: 'https://www.youtube.com/@Excelsior004' },
+    { svg: linkedin, name: 'LinkedIn', href: 'https://www.linkedin.com/in/pragadeesh-nehru-a26040257/' },
+    { svg: x, name: 'X', href: 'https://x.com/pragdxshn' },
+    { svg: github, name: 'GitHub', href: 'https://github.com/pragadeeshnehru' },
+];
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pragadeesh Nehru</title>
+    <meta name="description" content="Pragadeesh Nehru - developer, artist and writer. Portfolio." />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Manrope:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <div class="loader" id="loader" aria-hidden="true">
+        <svg class="loader-atom" id="loaderEclipse" viewBox="0 0 200 200" aria-hidden="true"><Fragment set:html={ATOM} /></svg>
+        <svg class="loader-brand" viewBox="0 0 100 100"><path d={BRAND} /></svg>
+        <div class="loader-name">PRAGADEESH</div>
+        <div class="loader-count" id="loaderCount">0</div>
+        <div class="loader-bar"><span id="loaderBar"></span></div>
+    </div>
+
+    <canvas class="ember-trail" id="trail" aria-hidden="true"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="bg-anim" aria-hidden="true">
+        <div class="bg-glow one"></div>
+        <div class="bg-glow two"></div>
+        <span class="spark" style="left:7%;animation-delay:0s;animation-duration:17s"></span>
+        <span class="spark" style="left:16%;animation-delay:4s;animation-duration:14s"></span>
+        <span class="spark" style="left:27%;animation-delay:8s;animation-duration:19s"></span>
+        <span class="spark" style="left:38%;animation-delay:2s;animation-duration:15s"></span>
+        <span class="spark" style="left:47%;animation-delay:11s;animation-duration:18s"></span>
+        <span class="spark" style="left:58%;animation-delay:6s;animation-duration:13s"></span>
+        <span class="spark" style="left:67%;animation-delay:1s;animation-duration:16s"></span>
+        <span class="spark" style="left:77%;animation-delay:9s;animation-duration:20s"></span>
+        <span class="spark" style="left:86%;animation-delay:5s;animation-duration:14s"></span>
+        <span class="spark" style="left:94%;animation-delay:12s;animation-duration:17s"></span>
+    </div>
+    <div class="progress" id="progress" aria-hidden="true"></div>
+
+    <nav class="nav-pill" id="nav">
+        <button class="nav-link" data-go="about">About</button>
+        <button class="nav-link" data-go="works">Works</button>
+        <button class="nav-link" data-go="contact">Contact</button>
+    </nav>
+
+    <section class="hero" id="hero">
+        <svg class="atom" viewBox="0 0 200 200" aria-hidden="true"><Fragment set:html={ATOM} /></svg>
+        <div class="spotlight" aria-hidden="true"></div>
+        <svg class="brand-watermark" viewBox="0 0 100 100" aria-hidden="true"><path d={BRAND} /></svg>
+        <p class="kicker rv">Hi, I am</p>
+        <h1 class="hero-name rv">PRAGADEESH</h1>
+        <p class="hero-sub rv">I am <span class="flip" id="flip">an artist</span></p>
+        <p class="scroll-cue rv" aria-hidden="true">scroll &#9662;</p>
+    </section>
+
+    <section class="movement" id="about">
+        <header class="m-head rv">
+            <svg class="m-brand" viewBox="0 0 100 100" aria-hidden="true"><path d={BRAND} /></svg>
+            <h2 class="m-title ink">ABOUT</h2>
+            <p class="m-sub">developer, writer, artist - the struggler behind the work</p>
+        </header>
+        <div class="personas">
+            {personas.map((p, i) => (
+                <div class={`persona rv ${i % 2 ? 'from-right' : 'from-left'}`}>
+                    <img src={p.img} alt={p.alt} loading="lazy" decoding="async" />
+                    <div><strong>{p.title}</strong><p>{p.text}</p></div>
+                </div>
+            ))}
+        </div>
+    </section>
+
+    <section class="movement" id="works">
+        <header class="m-head rv">
+            <svg class="m-brand" viewBox="0 0 100 100" aria-hidden="true"><path d={BRAND} /></svg>
+            <h2 class="m-title ink">ART</h2>
+            <p class="m-sub">the manga wall - panels from the gallery</p>
+        </header>
+        <div class="panels">
+            {panels.map((p, i) => (
+                <figure class={`panel rv ${i % 2 ? 'from-right' : 'from-left'}`}>
+                    <img src={p.src} alt={p.title} loading="lazy" decoding="async" />
+                    <figcaption><strong>{p.title}</strong><span>{p.quote}</span></figcaption>
+                </figure>
+            ))}
+        </div>
+    </section>
+
+    <section class="movement" id="writing">
+        <header class="m-head rv">
+            <svg class="m-brand" viewBox="0 0 100 100" aria-hidden="true"><path d={BRAND} /></svg>
+            <h2 class="m-title gold">WRITING</h2>
+            <p class="m-sub">books, culture and criticism - latest from Medium</p>
+        </header>
+        <div class="articles rv" id="articles">
+            <p class="articles-status">Loading articles...</p>
+        </div>
+    </section>
+
+    <section class="movement" id="craft">
+        <header class="m-head rv">
+            <svg class="m-brand" viewBox="0 0 100 100" aria-hidden="true"><path d={BRAND} /></svg>
+            <h2 class="m-title ink">THE CRAFT</h2>
+            <p class="m-sub">the stack behind the stage</p>
+        </header>
+        {tech.map((g) => (
+            <div class="tech-group rv">
+                <h3>{g.group}</h3>
+                <div class="tech-row">
+                    {g.items.map((t) => (
+                        <div class="tech"><Fragment set:html={t.svg} /><span>{t.name}</span></div>
+                    ))}
+                </div>
+            </div>
+        ))}
+    </section>
+
+    <footer class="foot" id="contact">
+        <header class="m-head rv">
+            <svg class="m-brand" viewBox="0 0 100 100" aria-hidden="true"><path d={BRAND} /></svg>
+            <h2 class="m-title gold">CONTACT</h2>
+            <p class="m-sub">find me around the web</p>
+        </header>
+        <blockquote class="quote rv">
+            "Those who were seen dancing were thought to be insane by those who could not hear the music."
+            <small>- Friedrich Nietzsche</small>
+        </blockquote>
+        <div class="dock rv">
+            {socials.map((s) => (
+                <a class="dock-item" href={s.href} target="_blank" rel="noreferrer" aria-label={s.name}>
+                    <Fragment set:html={s.svg} />
+                </a>
+            ))}
+        </div>
+        <p class="foot-line rv">Built by Pragadeesh Nehru</p>
+    </footer>
+
+<script>
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.documentElement.classList.add('js');
+
+    // bidirectional reveals (set up first so content can never be stranded invisible)
+    const revealAll = () => document.querySelectorAll('.rv').forEach((el) => el.classList.add('rv-in'));
+    if ('IntersectionObserver' in window) {
+        let ioWorking = false;
+        const io = new IntersectionObserver((entries) => {
+            ioWorking = true;
+            for (const e of entries) e.target.classList.toggle('rv-in', e.isIntersecting);
+        }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+        document.querySelectorAll('.rv').forEach((el) => io.observe(el));
+        // fail-open: if the observer never reports back, show everything
+        setTimeout(() => { if (!ioWorking) revealAll(); }, 3000);
+    } else {
+        revealAll();
+    }
+
+    // loader
+    const loader = document.getElementById('loader');
+    const hero = document.getElementById('hero');
+    const finish = () => {
+        loader.classList.add('lift');
+        hero.classList.add('hero-in');
+        setTimeout(() => loader.remove(), 900);
+    };
+    if (reduce) { finish(); }
+    else {
+        document.body.style.overflow = 'hidden';
+        const count = document.getElementById('loaderCount');
+        const bar = document.getElementById('loaderBar');
+        const ec = document.getElementById('loaderEclipse');
+        const start = performance.now();
+        const total = 1900;
+        const tick = (t) => {
+            const p = Math.min(1, (t - start) / total);
+            const e = 1 - Math.pow(1 - p, 3);
+            count.textContent = String(Math.round(e * 100));
+            bar.style.width = (e * 100) + '%';
+            ec.style.transform = 'scale(' + (0.6 + e * 0.4) + ')';
+            if (p < 1) requestAnimationFrame(tick);
+            else { document.body.style.overflow = ''; setTimeout(finish, 300); }
+        };
+        requestAnimationFrame(tick);
+    }
+
+    // flip words
+    const words = ['an artist', 'a developer', 'a writer'];
     const flip = document.getElementById('flip');
     let wi = 0;
     if (!reduce) setInterval(() => {
