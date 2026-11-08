@@ -1,4 +1,4 @@
-/* Monochrome surfaces with lavender, mint, peach and rose accents. */
+/* Monochrome surfaces with bright sticky-note accents. */
 :root {
     color-scheme: light;
     --ink: #fafafa; --bone: #19191e; --surface: #fff;
@@ -325,3 +325,60 @@ body { line-height: 1.65; }
 
 .hero-name { font-family: 'Allura', 'Brush Script MT', cursive; font-style: normal; font-weight: 400; font-size: clamp(4rem, 13vw, 10.5rem); letter-spacing: 0; line-height: 1.15; padding: .04em .1em; }
 .quote { font-family: Georgia, serif; font-style: italic; line-height: 1.75; }
+
+/* Bright studio system: ink text on sticky-note colour in either mode. */
+:root, :root[data-theme="dark"] {
+    --note-yellow: #f8e55b; --note-purple: #b29aff; --note-green: #83e3b0; --note-pink: #ff91b5;
+    --accent-rgb: 155,123,255; --mint-rgb: 83,210,151;
+    --pastel-lavender: var(--note-yellow); --pastel-mint: var(--note-green);
+    --pastel-peach: var(--note-purple); --pastel-rose: var(--note-pink);
+    --display: 'Oxanium', 'JetBrains Mono', monospace;
+}
+.hero-name { font-family: var(--display); font-size: clamp(2.4rem, 8.8vw, 8rem); font-weight: 600; letter-spacing: -.035em; line-height: 1.2; }
+.m-title { font-family: var(--display); letter-spacing: .01em; }
+.name-frame { padding: 1.2rem 1.5rem; }
+.name-frame::before, .name-frame::after { display: none; }
+.kicker { color: var(--bone); letter-spacing: .22em; }
+.role-icons { gap: 1.1rem; }
+.role-icons svg { fill: currentColor; width: 22px; height: 22px; opacity: 1; padding: 7px; box-sizing: content-box; border-radius: 10px; }
+.role-icons svg:nth-child(1) { color: #19191e; background: var(--note-yellow); }
+.role-icons svg:nth-child(2) { color: #19191e; background: var(--note-purple); }
+.role-icons svg:nth-child(3) { color: #19191e; background: var(--note-pink); }
+.section-icon { width: 56px; height: 56px; display: grid; place-items: center; margin: 0 auto 1.2rem; border-radius: 16px; background: var(--note-yellow); color: #19191e; transform: rotate(-5deg); }
+.section-icon svg { width: 28px; height: 28px; fill: currentColor; }
+#works .section-icon { background: var(--note-pink); transform: rotate(5deg); }
+#writing .section-icon { background: var(--note-purple); }
+#craft .section-icon { background: var(--note-green); transform: rotate(5deg); }
+#contact .section-icon { background: var(--note-yellow); }
+.persona { color: #19191e; border-color: rgba(0,0,0,.12); border-radius: 14px; }
+.persona p { color: #33333b; }
+.persona img { border-bottom: 1px solid rgba(0,0,0,.08); }
+.persona:nth-child(4n+1), .panel:nth-child(4n+1), .article:nth-child(4n+1) { --card-accent: var(--note-yellow); }
+.persona:nth-child(4n+2), .panel:nth-child(4n+2), .article:nth-child(4n+2) { --card-accent: var(--note-green); }
+.persona:nth-child(4n+3), .panel:nth-child(4n+3), .article:nth-child(4n+3) { --card-accent: var(--note-purple); }
+.persona:nth-child(4n+4), .panel:nth-child(4n+4), .article:nth-child(4n+4) { --card-accent: var(--note-pink); }
+.panel { border-bottom: 5px solid var(--card-accent); }
+.article { border-top: 5px solid var(--card-accent); }
+.article:focus-visible, .dock-item:focus-visible { outline: 3px solid var(--blood); outline-offset: 5px; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+ .persona:hover, .panel:hover { box-shadow: 7px 9px 0 var(--card-accent); }
+ .article:hover { color: #19191e; background: var(--card-accent); border-color: var(--card-accent); box-shadow: 5px 7px 0 rgba(var(--fg-rgb),.22); }
+ .article:hover span { color: #33333b; }
+ .section-icon:hover { transform: rotate(0) translateY(-4px); }
+}
+.section-icon { transition: transform .25s ease; }
+.progress, .loader-bar span { background: linear-gradient(90deg, var(--note-yellow), var(--note-pink), var(--note-purple), var(--note-green)); }
+.spark { background: var(--note-yellow); } .spark:nth-child(odd) { background: var(--note-pink); }
+.pattern-light { background-image: linear-gradient(rgba(155,123,255,.48) 1px, transparent 1px), linear-gradient(90deg,rgba(83,210,151,.48) 1px, transparent 1px), radial-gradient(circle at var(--px) var(--py),rgba(248,229,91,.19),transparent 320px); }
+.mobile-aura { background: radial-gradient(circle,rgba(248,229,91,.23),rgba(155,123,255,.15) 35%,transparent 68%); }
+.scroll-cue { color: rgba(var(--fg-rgb),.6); }
+@media (max-width: 420px) { .hero-name { font-size: clamp(2.1rem, 9vw, 2.5rem); } .name-frame { padding-inline: 0; } }
+
+/* Review pass: touch targets, body readability and keyboard access. */
+.nav-link, .theme-toggle { min-height: 44px; }
+.persona p { font-size: .84rem; line-height: 1.8; }
+.article span, .tech span, .foot-line { color: rgba(var(--fg-rgb),.72); }
+.skip-link { position: fixed; left: 1rem; top: -5rem; z-index: 100; padding: .7rem 1rem; color: #19191e; background: var(--note-yellow); border-radius: 8px; }
+.skip-link:focus { top: 1rem; }
+section[id], footer[id] { scroll-margin-top: 95px; }
+@media (prefers-reduced-motion: reduce) { .section-icon { transform: none; } }
