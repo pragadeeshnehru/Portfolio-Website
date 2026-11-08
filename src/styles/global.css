@@ -585,3 +585,16 @@ section[id], footer[id] { scroll-margin-top: 95px; }
  .tech:hover svg, .dock-item:hover svg, .dock-item:focus-visible svg { animation: none; filter: drop-shadow(0 0 7px var(--hover-glow)); }
  .tech:hover svg, .dock-item:hover, .section-rail button:hover, .section-rail button:focus-visible { transform: none; }
 }
+
+/* Saturated studio light, neon night; green pointer illumination. */
+:root { --cursor-green: #00c94f; --field-purple: 132,45,255; --field-green: 0,205,92; --field-pink: 255,36,135; }
+:root[data-theme="dark"] { --cursor-green: #39ff78; --field-purple: 174,75,255; --field-green: 57,255,120; --field-pink: 255,61,172; }
+.pattern-light { background: radial-gradient(circle 220px at var(--px) var(--py), var(--cursor-green), transparent 90%); }
+.mobile-aura { background: radial-gradient(circle, color-mix(in srgb, var(--cursor-green) 24%, transparent), rgba(var(--field-purple),.14) 35%, transparent 68%); }
+.bg-anim .bg-glow.one { background: radial-gradient(circle, rgba(var(--field-purple),.32), transparent 62%); }
+.bg-anim .bg-glow.two { background: radial-gradient(circle, rgba(var(--field-green),.28), transparent 62%); }
+.bg-anim .pattern-patches i { background: radial-gradient(ellipse, rgba(var(--field-purple),.45), transparent 68%); }
+.bg-anim .pattern-patches i:nth-child(2) { background: radial-gradient(ellipse, rgba(var(--field-green),.48), transparent 68%); }
+.bg-anim .pattern-patches i:nth-child(3) { background: radial-gradient(ellipse, rgba(var(--field-pink),.45), transparent 68%); }
+:root[data-theme="dark"] .spark { background: #39ff78; box-shadow: 0 0 5px rgba(57,255,120,.3); }
+:root[data-theme="dark"] .spark:nth-child(odd) { background: #c46aff; }
