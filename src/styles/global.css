@@ -578,7 +578,7 @@ section[id], footer[id] { scroll-margin-top: 95px; }
 /* Torn brush edges: photo bands tear into the plain sections (unfair.so style). */
 :root {
     --tear-both: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 400' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M0 80 90 55 180 90 270 60 360 85 450 58 540 88 630 62 720 82 810 56 900 86 990 60 1080 84 1170 58 1260 88 1350 64 1440 80 1440 320 1350 345 1260 312 1170 342 1080 316 990 344 900 314 810 340 720 318 630 344 540 312 450 340 360 315 270 342 180 312 90 340 0 320 Z'/%3E%3C/svg%3E");
-    --tear-bottom: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M0 0 1440 0 1440 60 1350 84 1260 55 1170 86 1080 58 990 82 900 56 810 84 720 60 630 86 540 58 450 82 360 56 270 84 180 60 90 86 0 62 Z'/%3E%3C/svg%3E");
+    --tear-bottom: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 500' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M0 0 1440 0 1440 420 1350 448 1260 415 1170 452 1080 420 990 446 900 418 810 450 720 424 630 452 540 416 450 446 360 420 270 450 180 424 90 452 0 428 Z'/%3E%3C/svg%3E");
 }
 .band { position: relative; isolation: isolate; }
 .band::before {
@@ -614,13 +614,13 @@ section[id], footer[id] { scroll-margin-top: 95px; }
 .hero .pattern-base {
     position: absolute; inset: 0; z-index: -1; pointer-events: none;
     -webkit-mask-image: var(--diamond), var(--tear-bottom);
-    -webkit-mask-size: 34px 34px, 100% 120px;
-    -webkit-mask-position: 0 0, 0 100%;
+    -webkit-mask-size: 34px 34px, 100% 100%;
+    -webkit-mask-position: 0 0, 0 0;
     -webkit-mask-repeat: repeat, no-repeat;
     -webkit-mask-composite: source-in;
     mask-image: var(--diamond), var(--tear-bottom);
-    mask-size: 34px 34px, 100% 120px;
-    mask-position: 0 0, 0 100%;
+    mask-size: 34px 34px, 100% 100%;
+    mask-position: 0 0, 0 0;
     mask-repeat: repeat, no-repeat;
     mask-composite: intersect;
 }
