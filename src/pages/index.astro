@@ -270,7 +270,10 @@ const socials = [
     const themeToggle = document.getElementById('themeToggle');
     const syncThemeButton = () => {
         const dark = document.documentElement.dataset.theme === 'dark';
-        themeToggle.textContent = dark ? 'Light' : 'Dark';
+        themeToggle.innerHTML = dark
+            ? '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>'
+            : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.1A8.7 8.7 0 0 1 9.9 3.5a8.8 8.8 0 1 0 10.6 10.6Z"/></svg>';
+        themeToggle.title = dark ? 'Switch to light mode' : 'Switch to dark mode';
         themeToggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
         themeToggle.setAttribute('aria-pressed', String(dark));
     };
@@ -331,13 +334,15 @@ const socials = [
     const words = ['an artist', 'a developer', 'a writer'];
     const flip = document.getElementById('flip');
     let wi = 0;
-    if (!reduce) setInterval(() => {
+    if (!reduce) setInterval(async () => {
+        await flip.animate([{ opacity: 1, transform: 'translateY(0)' }, { opacity: .65, transform: 'translateY(-2px)' }], { duration: 240, easing: 'ease-in', fill: 'forwards' }).finished;
+        const previousWidth = flip.getBoundingClientRect().width;
         wi = (wi + 1) % words.length;
         flip.textContent = words[wi];
-        flip.classList.remove('swap');
-        void flip.offsetWidth;
-        flip.classList.add('swap');
-    }, 2200);
+        const nextWidth = flip.getBoundingClientRect().width;
+        flip.animate([{ width: previousWidth + 'px' }, { width: nextWidth + 'px' }], { duration: 380, easing: 'cubic-bezier(.22,1,.36,1)' });
+        flip.animate([{ opacity: .65, transform: 'translateY(2px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 380, easing: 'ease-out', fill: 'forwards' });
+    }, 3400);
 
     // nav + progress
     const nav = document.getElementById('nav');
