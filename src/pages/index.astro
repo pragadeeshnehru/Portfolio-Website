@@ -129,6 +129,14 @@ const socials = [
         <button class="nav-link" data-go="contact">Contact</button>
 
     </nav>
+    <nav class="section-rail" aria-label="Page sections">
+        <button data-section="hero" aria-label="Introduction"><i></i><span>Intro</span></button>
+        <button data-section="about" aria-label="About"><i></i><span>About</span></button>
+        <button data-section="works" aria-label="Art"><i></i><span>Art</span></button>
+        <button data-section="writing" aria-label="Writing"><i></i><span>Writing</span></button>
+        <button data-section="craft" aria-label="Craft"><i></i><span>Craft</span></button>
+        <button data-section="contact" aria-label="Contact"><i></i><span>Contact</span></button>
+    </nav>
     <button class="theme-toggle" id="themeToggle" aria-label="Switch colour mode" type="button">Mode</button>
 
     <section class="hero" id="hero">
@@ -372,6 +380,17 @@ const socials = [
                 if (active) button.setAttribute('aria-current', 'location');
                 else button.removeAttribute('aria-current');
             });
+            let railCurrent = 'hero';
+            for (const id of ['hero', 'about', 'works', 'writing', 'craft', 'contact']) {
+                const section = document.getElementById(id);
+                if (section && section.offsetTop <= marker) railCurrent = id;
+            }
+            if (y + window.innerHeight >= document.documentElement.scrollHeight - 8) railCurrent = 'contact';
+            document.querySelectorAll('.section-rail button').forEach((button) => {
+                const active = button.dataset.section === railCurrent;
+                button.classList.toggle('is-active', active);
+                if (active) button.setAttribute('aria-current', 'location'); else button.removeAttribute('aria-current');
+            });
             ticking = false;
         });
     };
@@ -380,6 +399,8 @@ const socials = [
     onScroll();
     document.querySelectorAll('.nav-link').forEach((b) =>
         b.addEventListener('click', () => document.getElementById(b.dataset.go)?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' })));
+
+    document.querySelectorAll('.section-rail button').forEach((button) => button.addEventListener('click', () => document.getElementById(button.dataset.section)?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' })));
 
     // Gentle card tilt only where a precise pointer is available.
     if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && !reduce) {
