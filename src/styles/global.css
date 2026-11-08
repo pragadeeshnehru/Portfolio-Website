@@ -465,3 +465,18 @@ section[id], footer[id] { scroll-margin-top: 95px; }
 :root:not([data-theme="dark"]) .pattern-patches i { background: radial-gradient(ellipse, rgba(155,123,255,.45), transparent 68%); }
 :root:not([data-theme="dark"]) .pattern-patches i:nth-child(2) { background: radial-gradient(ellipse, rgba(83,210,151,.48), transparent 68%); }
 :root:not([data-theme="dark"]) .pattern-patches i:nth-child(3) { background: radial-gradient(ellipse, rgba(255,145,181,.45), transparent 68%); }
+
+.art-open { display: block; width: 100%; border: 0; padding: 0; background: transparent; cursor: zoom-in; }
+.art-open:focus-visible { outline: 3px solid var(--blood); outline-offset: -4px; }
+.art-dialog { width: min(1200px, 94vw); max-width: 94vw; height: 92svh; max-height: 92svh; padding: 0; border: 1px solid rgba(var(--fg-rgb),.2); border-radius: 16px; background: var(--surface); color: var(--bone); box-shadow: 0 24px 90px rgba(0,0,0,.4); }
+.art-dialog::backdrop { background: rgba(0,0,0,.78); backdrop-filter: blur(5px); }
+.art-dialog[open] { animation: art-arrive .22s ease-out; }
+@keyframes art-arrive { from { opacity: 0; transform: translateY(10px) scale(.98); } to { opacity: 1; transform: none; } }
+.art-dialog-bar { display: flex; align-items: center; gap: .6rem; padding: .7rem 1rem; height: 66px; border-bottom: 1px solid rgba(var(--fg-rgb),.14); }
+.art-dialog-bar h2 { font: 700 1rem var(--body); margin: 0; flex: 1; }
+.art-dialog-bar button { min-height: 44px; border: 1px solid rgba(var(--fg-rgb),.2); border-radius: 8px; background: var(--ink); color: var(--bone); padding: .4rem .8rem; font: 600 .8rem var(--body); cursor: pointer; }
+.art-stage { height: calc(100% - 66px); overflow: auto; display: grid; place-items: center; padding: 12px; }
+.art-stage img { display: block; max-width: 100%; max-height: calc(92svh - 92px); width: auto; height: auto; object-fit: contain; }
+.art-stage.actual-size { display: block; }
+.art-stage.actual-size img { max-width: none; max-height: none; }
+@media(max-width:480px) { .art-dialog-bar { padding-inline: .6rem; gap: .4rem; } .art-dialog-bar h2 { font-size: .8rem; } .art-dialog-bar button { font-size: .7rem; padding-inline: .6rem; } }
