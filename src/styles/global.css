@@ -149,8 +149,8 @@ img { max-width: 100%; }
 }
 .hero-sub { font-size: clamp(.95rem, 2.6vw, 1.25rem); color: rgba(var(--fg-rgb),.82); }
 .flip { display: inline-block; font-family: var(--display); font-weight: 700; color: var(--blood); min-width: 5ch; text-align: left; }
-.flip.swap { animation: flip-in .55s cubic-bezier(.2,.9,.3,1.2); }
-@keyframes flip-in { from { transform: rotateX(80deg) translateY(8px); opacity: 0; } }
+ .flip.swap { animation: role-in .22s ease-out; }
+@keyframes role-in { from { transform: translateY(2px); opacity: .8; } to { transform: none; opacity: 1; } }
 .role-icons { display: flex; gap: 1.4rem; justify-content: center; margin-bottom: .9rem; color: var(--gold); }
 .role-icons svg { width: 19px; height: 19px; opacity: .8; animation: icon-bob 6s ease-in-out infinite; }
 .role-icons svg:nth-child(2) { animation-delay: 1.5s; color: var(--bone); }
