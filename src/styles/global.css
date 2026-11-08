@@ -38,6 +38,8 @@ img { max-width: 100%; }
 }
 
 /* nav */
+.mobile-nav { display: none; max-width: calc(100vw - 12px); flex-wrap: wrap; justify-content: center; }
+@media(max-width:899px) { .mobile-nav { display: flex; } }
 .nav-pill {
     position: fixed; top: 14px; left: 50%; transform: translateX(-50%); z-index: 44;
     display: flex; gap: .4rem; padding: .45rem .6rem; border-radius: 999px;
