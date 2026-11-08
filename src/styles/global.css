@@ -575,19 +575,20 @@ section[id], footer[id] { scroll-margin-top: 95px; }
 .section-rail { background: rgba(var(--bg-rgb),.18); }
 .section-rail:hover, .section-rail:focus-within { background: rgba(var(--bg-rgb),.3); }
 
-/* Dithered diamond band between sections, inspired by unfair.so pixel dissolves. */
-.section-sep { position: relative; height: clamp(72px, 10vw, 120px); margin: .5rem 0; }
+/* Quiet editorial divider: a hairline that fades out, one diamond mark drifting at center. */
+.section-sep { position: relative; height: clamp(64px, 9vw, 104px); margin: .5rem 0; }
 .section-sep::before {
-    content: ""; position: absolute; inset: 0;
-    background: linear-gradient(90deg, var(--blood), var(--gold));
-    -webkit-mask-image: var(--diamond), repeating-conic-gradient(#000 0 25%, transparent 0 50%), linear-gradient(to bottom, transparent, #000 42%, #000 58%, transparent);
-    -webkit-mask-size: 26px 26px, 4px 4px, 100% 100%;
-    -webkit-mask-repeat: repeat, repeat, no-repeat;
-    -webkit-mask-composite: source-in;
-    mask-image: var(--diamond), repeating-conic-gradient(#000 0 25%, transparent 0 50%), linear-gradient(to bottom, transparent, #000 42%, #000 58%, transparent);
-    mask-size: 26px 26px, 4px 4px, 100% 100%;
-    mask-repeat: repeat, repeat, no-repeat;
-    mask-composite: intersect;
+    content: ""; position: absolute; left: 7%; right: 7%; top: 50%; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(var(--fg-rgb),.3) 25%, rgba(var(--fg-rgb),.3) 75%, transparent);
+}
+.section-sep::after {
+    content: ""; position: absolute; left: 50%; top: 50%; width: 15px; height: 15px;
+    margin: -7.5px 0 0 -7.5px;
+    background: linear-gradient(135deg, var(--blood), var(--gold));
+    -webkit-mask-image: var(--diamond); mask-image: var(--diamond);
+    -webkit-mask-size: 15px 15px; mask-size: 15px 15px;
+    -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+    transform: translate3d(var(--sepx, 0px), 0, 0);
 }
 
 /* About: editorial index of interests; glyph sigils replace photos. */
@@ -614,5 +615,4 @@ section[id], footer[id] { scroll-margin-top: 95px; }
 
 /* Scroll parallax: headers drift gently after reveal; separators slide sideways. */
 .m-head.rv-in { transition: opacity .8s ease; transform: translate3d(0, var(--pxy, 0px), 0); }
-.section-sep::before { mask-position: var(--sepx, 0px) 0, var(--sepx, 0px) 0, 0 0; -webkit-mask-position: var(--sepx, 0px) 0, var(--sepx, 0px) 0, 0 0; }
 @media (prefers-reduced-motion: reduce) { .m-head.rv-in { transform: none; } }
