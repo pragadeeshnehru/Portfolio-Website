@@ -411,3 +411,6 @@ section[id], footer[id] { scroll-margin-top: 95px; }
 @media (prefers-reduced-motion: reduce) { .pattern-patches { mask-image: none; opacity: .25; } }
 
 .theme-toggle { position: fixed; right: max(20px, env(safe-area-inset-right)); bottom: max(20px, env(safe-area-inset-bottom)); z-index: 44; min-width: 68px; min-height: 44px; box-shadow: 0 4px 18px rgba(0,0,0,.12); }
+/* Keep the atom centered above the introduction on every viewport. */
+.atom { left: 50%; right: auto; margin-right: 0; top: 9%; width: clamp(110px, 13vw, 170px); margin-left: calc(clamp(110px, 13vw, 170px) / -2); }
+@media (max-width: 640px) { .atom { left: 50%; right: auto; top: 9%; width: 120px; margin-left: -60px; margin-right: 0; } }
