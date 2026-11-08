@@ -607,3 +607,12 @@ section[id], footer[id] { scroll-margin-top: 95px; }
 .persona strong { letter-spacing: .1em; text-transform: uppercase; font-size: .95rem; }
 .persona div { padding: 0; }
 @media (max-width: 640px) { .persona { grid-template-columns: auto 1fr; gap: .9rem; } .persona .p-glyph { display: none; } }
+
+/* Selective patterning: diamonds live in the hero only; the cursor glow floats free. */
+.hero .pattern-base { position: absolute; inset: -4% 0; z-index: -1; pointer-events: none; }
+.pattern-light { mask-image: none; -webkit-mask-image: none; opacity: .5; }
+
+/* Scroll parallax: headers drift gently after reveal; separators slide sideways. */
+.m-head.rv-in { transition: opacity .8s ease; transform: translate3d(0, var(--pxy, 0px), 0); }
+.section-sep::before { mask-position: var(--sepx, 0px) 0, var(--sepx, 0px) 0, 0 0; -webkit-mask-position: var(--sepx, 0px) 0, var(--sepx, 0px) 0, 0 0; }
+@media (prefers-reduced-motion: reduce) { .m-head.rv-in { transform: none; } }
