@@ -67,14 +67,16 @@ img { max-width: 100%; }
     animation: atom-drift 14s ease-in-out infinite alternate;
 }
 @keyframes atom-drift { to { transform: translateY(16px); } }
-.atom .e, .loader-atom .e {
-    offset-path: path('M 24 100 a 76 26 0 1 1 152 0 a 76 26 0 1 1 -152 0');
-    offset-distance: 0%; offset-rotate: 0deg;
-    filter: drop-shadow(0 0 5px rgba(216,168,78,.75));
-    animation: e-orbit 7s linear infinite;
-}
-.atom .e2, .loader-atom .e2 { animation-duration: 9.5s; animation-direction: reverse; }
-@keyframes e-orbit { to { offset-distance: 100%; } }
+.atom .sh, .loader-atom .sh { transform-box: view-box; transform-origin: 100px 100px; animation: sh-spin linear infinite; }
+.atom .sh1, .loader-atom .sh1 { animation-duration: 8s; }
+.atom .sh2, .loader-atom .sh2 { animation-duration: 11s; animation-direction: reverse; }
+.atom .sh3, .loader-atom .sh3 { animation-duration: 14s; }
+.atom .sh4, .loader-atom .sh4 { animation-duration: 17s; animation-direction: reverse; }
+.atom .sh5, .loader-atom .sh5 { animation-duration: 21s; }
+.atom .sh6, .loader-atom .sh6 { animation-duration: 26s; animation-direction: reverse; }
+@keyframes sh-spin { to { transform: rotate(360deg); } }
+.atom .pe, .loader-atom .pe { filter: drop-shadow(0 0 5px rgba(216,168,78,.9)); }
+.atom .nuc, .loader-atom .nuc { filter: drop-shadow(0 0 10px rgba(216,168,78,.7)); }
 
 /* background animation layer */
 .bg-anim { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
