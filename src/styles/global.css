@@ -454,3 +454,14 @@ section[id], footer[id] { scroll-margin-top: 95px; }
 /* Darker upward particles stay visible on the light surface. */
 :root:not([data-theme="dark"]) .spark { background: #614794; width: 4px; height: 4px; box-shadow: 0 0 3px rgba(97,71,148,.2); }
 :root:not([data-theme="dark"]) .spark:nth-child(odd) { background: #287568; }
+
+/* Keep the atom in the layout so no viewport can collide with the intro. */
+.hero { padding: 6rem 1.25rem 3rem; }
+.hero > .atom { position: relative; left: auto; right: auto; top: auto; bottom: auto; width: clamp(108px, 10vw, 140px); margin: 0 0 1.2rem; flex: 0 0 auto; }
+@media(max-width:640px) { .hero { padding: 6rem 1rem 2.5rem; } .hero > .atom { width: 108px; margin: 0 0 1rem; } }
+/* Brighter moving colour fields on light surfaces, not brighter particles. */
+:root:not([data-theme="dark"]) .bg-glow.one { background: radial-gradient(circle, rgba(155,123,255,.32), transparent 62%); }
+:root:not([data-theme="dark"]) .bg-glow.two { background: radial-gradient(circle, rgba(83,210,151,.28), transparent 62%); }
+:root:not([data-theme="dark"]) .pattern-patches i { background: radial-gradient(ellipse, rgba(155,123,255,.45), transparent 68%); }
+:root:not([data-theme="dark"]) .pattern-patches i:nth-child(2) { background: radial-gradient(ellipse, rgba(83,210,151,.48), transparent 68%); }
+:root:not([data-theme="dark"]) .pattern-patches i:nth-child(3) { background: radial-gradient(ellipse, rgba(255,145,181,.45), transparent 68%); }
