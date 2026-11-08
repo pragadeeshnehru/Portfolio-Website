@@ -414,3 +414,10 @@ section[id], footer[id] { scroll-margin-top: 95px; }
 /* Keep the atom centered above the introduction on every viewport. */
 .atom { left: 50%; right: auto; margin-right: 0; top: 9%; width: clamp(110px, 13vw, 170px); margin-left: calc(clamp(110px, 13vw, 170px) / -2); }
 @media (max-width: 640px) { .atom { left: 50%; right: auto; top: 9%; width: 120px; margin-left: -60px; margin-right: 0; } }
+/* Readability pass: roomier marks and quiet reading areas. */
+.pattern-base { opacity: .15; mask-size: 34px 34px; }
+.pattern-light { mask-size: 34px 34px; opacity: .7; }
+.m-head, .quote, .hero-sub { background: radial-gradient(ellipse at center, rgba(var(--bg-rgb),.98) 15%, rgba(var(--bg-rgb),.8) 50%, rgba(var(--bg-rgb),0) 75%); }
+.name-frame { background: radial-gradient(ellipse at center, rgba(var(--bg-rgb),.95), rgba(var(--bg-rgb),.7) 50%, rgba(var(--bg-rgb),0) 75%); }
+.tech-group { background: rgba(var(--bg-rgb),.9); padding: 1.5rem 1rem; border-radius: 20px; }
+.m-sub, .tech-group h3, .quote small { color: rgba(var(--fg-rgb),.78); }
