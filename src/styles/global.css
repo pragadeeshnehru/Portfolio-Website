@@ -64,7 +64,11 @@ img { max-width: 100%; }
 }
 .atom {
     position: absolute; top: 8%; right: 8%; width: clamp(110px, 15vw, 210px); height: auto; opacity: .92;
+    filter: drop-shadow(0 0 18px rgba(216,168,78,.22));
     animation: atom-drift 14s ease-in-out infinite alternate;
+}
+@media (max-width: 640px) {
+    .atom { top: 6%; right: 50%; margin-right: calc(clamp(130px, 34vw, 180px) / -2); width: clamp(130px, 34vw, 180px); }
 }
 @keyframes atom-drift { to { transform: translateY(16px); } }
 .atom .sh, .loader-atom .sh { transform-box: view-box; transform-origin: 100px 100px; animation: sh-spin linear infinite; }
@@ -76,7 +80,11 @@ img { max-width: 100%; }
 .atom .sh6, .loader-atom .sh6 { animation-duration: 26s; animation-direction: reverse; }
 @keyframes sh-spin { to { transform: rotate(360deg); } }
 .atom .pe, .loader-atom .pe { filter: drop-shadow(0 0 5px rgba(216,168,78,.9)); }
-.atom .nuc, .loader-atom .nuc { filter: drop-shadow(0 0 10px rgba(216,168,78,.7)); }
+.atom .nuc, .loader-atom .nuc { filter: drop-shadow(0 0 14px rgba(216,168,78,.85)); }
+.atom .rad, .loader-atom .rad { transform-box: view-box; transform-origin: 100px 100px; opacity: 0; animation: rad-pulse 4.5s ease-out infinite; }
+.atom .r2, .loader-atom .r2 { animation-delay: 1.5s; }
+.atom .r3, .loader-atom .r3 { animation-delay: 3s; }
+@keyframes rad-pulse { 0% { transform: scale(.35); opacity: .5; } 100% { transform: scale(4.6); opacity: 0; } }
 
 /* background animation layer */
 .bg-anim { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
@@ -200,4 +208,4 @@ img { max-width: 100%; }
     *, *::before, *::after { animation: none !important; transition: none !important; }
     html { scroll-behavior: auto; }
     .rv, .hero .rv { opacity: 1 !important; transform: none !important; }
-}
+    }
