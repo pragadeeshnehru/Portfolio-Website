@@ -95,6 +95,9 @@ const socials = [
     <canvas class="ember-trail" id="trail" aria-hidden="true"></canvas>
     <div class="grain" aria-hidden="true"></div>
     <div class="bg-anim" aria-hidden="true">
+        <div class="pattern-base"></div>
+        <div class="pattern-light" id="patternLight"></div>
+        <div class="mobile-aura"></div>
         <div class="bg-glow one"></div>
         <div class="bg-glow two"></div>
         <span class="spark" style="left:7%;animation-delay:0s;animation-duration:17s"></span>
@@ -299,8 +302,48 @@ const socials = [
     document.querySelectorAll('.nav-link').forEach((b) =>
         b.addEventListener('click', () => document.getElementById(b.dataset.go)?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' })));
 
+    // Gentle card tilt only where a precise pointer is available.
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && !reduce) {
+        document.querySelectorAll('.persona, .panel').forEach((card) => {
+            let frame = 0;
+            card.addEventListener('pointermove', (e) => {
+                if (frame) return;
+                frame = requestAnimationFrame(() => {
+                    const r = card.getBoundingClientRect();
+                    const x = (e.clientX - r.left) / r.width - .5;
+                    const y = (e.clientY - r.top) / r.height - .5;
+                    card.style.setProperty('--tilt-x', (-y * 8) + 'deg');
+                    card.style.setProperty('--tilt-y', (x * 8) + 'deg');
+                    frame = 0;
+                });
+            }, { passive: true });
+            card.addEventListener('pointerleave', () => {
+                if (frame) cancelAnimationFrame(frame);
+                frame = 0;
+                card.style.setProperty('--tilt-x', '0deg');
+                card.style.setProperty('--tilt-y', '0deg');
+            });
+        });
+    }
+
     // ember trail
     const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    // A single paint per pointer frame, with no idle animation loop.
+    const pattern = document.getElementById('patternLight');
+    if (fine && !reduce && pattern) {
+        let patternFrame = 0;
+        let px = window.innerWidth * .65, py = window.innerHeight * .4;
+        window.addEventListener('pointermove', (e) => {
+            px = e.clientX; py = e.clientY;
+            if (patternFrame) return;
+            patternFrame = requestAnimationFrame(() => {
+                pattern.style.setProperty('--px', px + 'px');
+                pattern.style.setProperty('--py', py + 'px');
+                patternFrame = 0;
+            });
+        }, { passive: true });
+    }
+
     const canvas = document.getElementById('trail');
     if (fine && !reduce && canvas) {
         const ctx = canvas.getContext('2d');
