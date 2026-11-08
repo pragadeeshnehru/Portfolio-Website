@@ -38,7 +38,8 @@ img { max-width: 100%; }
 }
 
 /* nav */
-.nav-pill.mobile-nav { display: none; max-width: calc(100vw - 12px); flex-wrap: wrap; justify-content: center; }
+.nav-pill.mobile-nav { display: none; max-width: calc(100vw - 12px); flex-wrap: wrap; justify-content: center; gap: 2px; padding: 4px; }
+.nav-pill.mobile-nav .nav-link { padding: .35rem .55rem; font-size: .74rem; min-height: 40px; }
 @media(max-width:899px) { .nav-pill.mobile-nav { display: flex; } }
 .nav-pill {
     position: fixed; top: 14px; left: 50%; transform: translateX(-50%); z-index: 44;
