@@ -322,3 +322,6 @@ body { line-height: 1.65; }
 .nav-link { font-size: .75rem; }
 .hero-sub { gap: .6em; }
 .flip { min-width: 12ch; }
+
+.hero-name { font-family: 'Allura', 'Brush Script MT', cursive; font-style: normal; font-weight: 400; font-size: clamp(4rem, 13vw, 10.5rem); letter-spacing: 0; line-height: 1.15; padding: .04em .1em; }
+.quote { font-family: Georgia, serif; font-style: italic; line-height: 1.75; }
