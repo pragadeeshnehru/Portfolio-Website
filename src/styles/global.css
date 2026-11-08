@@ -50,7 +50,7 @@ img { max-width: 100%; }
     transition: transform .7s cubic-bezier(.7,0,.2,1);
 }
 .loader.lift { transform: translateY(-101%); }
-.loader-mj { width: 84px; filter: drop-shadow(0 0 22px rgba(193,18,31,.55)); }
+.loader-atom { width: 120px; }
 .loader-brand { width: 44px; height: 44px; fill: var(--bone); opacity: .9; }
 .loader-name { font-family: var(--display); letter-spacing: .4em; text-indent: .4em; font-size: .85rem; }
 .loader-count { font-family: var(--display); font-size: 2rem; color: var(--blood); font-variant-numeric: tabular-nums; }
@@ -62,12 +62,19 @@ img { max-width: 100%; }
     position: relative; min-height: 100svh; display: flex; flex-direction: column;
     align-items: center; justify-content: center; text-align: center; padding: 4rem 1.25rem; overflow: clip;
 }
-.mj {
-    position: absolute; top: 6%; right: 5%; width: clamp(140px, 20vw, 300px); height: auto;
-    filter: drop-shadow(0 0 26px rgba(193,18,31,.5)) drop-shadow(0 0 60px rgba(216,168,78,.18));
-    animation: mj-drift 12s ease-in-out infinite alternate;
+.atom {
+    position: absolute; top: 8%; right: 8%; width: clamp(110px, 15vw, 210px); height: auto; opacity: .92;
+    animation: atom-drift 14s ease-in-out infinite alternate;
 }
-@keyframes mj-drift { to { transform: translateY(18px) rotate(-1.2deg); } }
+@keyframes atom-drift { to { transform: translateY(16px); } }
+.atom .e, .loader-atom .e {
+    offset-path: path('M 24 100 a 76 26 0 1 1 152 0 a 76 26 0 1 1 -152 0');
+    offset-distance: 0%; offset-rotate: 0deg;
+    filter: drop-shadow(0 0 5px rgba(216,168,78,.75));
+    animation: e-orbit 7s linear infinite;
+}
+.atom .e2, .loader-atom .e2 { animation-duration: 9.5s; animation-direction: reverse; }
+@keyframes e-orbit { to { offset-distance: 100%; } }
 
 /* background animation layer */
 .bg-anim { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
