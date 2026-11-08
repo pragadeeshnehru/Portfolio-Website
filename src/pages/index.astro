@@ -20,6 +20,8 @@ import github from '../icons/github.svg?raw';
 
 const BRAND = 'M50 2 L57 22 L74 8 L68 32 L92 24 L76 46 L94 68 L70 64 L72 92 L54 72 L50 98 L46 72 L28 92 L30 64 L6 68 L24 46 L8 24 L32 32 L26 8 L43 22 Z';
 
+const MJ = '<g fill="#1b1b22" stroke="#1b1b22"><line x1="148" y1="126" x2="196" y2="38" stroke-width="22" stroke-linecap="round"/><line x1="94" y1="128" x2="64" y2="216" stroke-width="22" stroke-linecap="round"/><line x1="122" y1="112" x2="124" y2="238" stroke-width="52" stroke-linecap="round"/><line x1="112" y1="240" x2="102" y2="356" stroke-width="24" stroke-linecap="round"/><line x1="136" y1="240" x2="146" y2="356" stroke-width="24" stroke-linecap="round"/><line x1="102" y1="356" x2="94" y2="392" stroke-width="13" stroke-linecap="round"/><line x1="146" y1="356" x2="154" y2="392" stroke-width="13" stroke-linecap="round"/><line x1="103" y1="344" x2="99" y2="360" stroke="#ece5d8" stroke-width="24"/><line x1="145" y1="344" x2="149" y2="360" stroke="#ece5d8" stroke-width="24"/><circle cx="112" cy="82" r="17" stroke="none"/><ellipse cx="112" cy="66" rx="42" ry="9" transform="rotate(-14 112 66)" stroke="none"/><path d="M84 62 Q88 32 112 30 Q140 32 138 60 Q112 48 84 62 Z" stroke="none"/><path d="M87 57 Q112 46 137 55 L137 51 Q112 42 87 53 Z" fill="#d8a84e" stroke="none" opacity=".85"/></g>';
+
 const personas = [
     { img: '/img/dev.webp', alt: 'Pragadeesh, developer', title: 'Software Developer and Curious Learner',
       text: 'With a love for reading and writing, I explore topics ranging from philosophy to fiction. I enjoy expanding my technical skills by learning about machine learning to create meaningful and practical solutions.' },
@@ -83,7 +85,7 @@ const socials = [
 </head>
 <body>
     <div class="loader" id="loader" aria-hidden="true">
-        <div class="loader-eclipse" id="loaderEclipse"></div>
+        <svg class="loader-mj" id="loaderEclipse" viewBox="0 0 240 480" aria-hidden="true"><Fragment set:html={MJ} /></svg>
         <svg class="loader-brand" viewBox="0 0 100 100"><path d={BRAND} /></svg>
         <div class="loader-name">PRAGADEESH</div>
         <div class="loader-count" id="loaderCount">0</div>
@@ -92,6 +94,20 @@ const socials = [
 
     <canvas class="ember-trail" id="trail" aria-hidden="true"></canvas>
     <div class="grain" aria-hidden="true"></div>
+    <div class="bg-anim" aria-hidden="true">
+        <div class="bg-glow one"></div>
+        <div class="bg-glow two"></div>
+        <span class="spark" style="left:7%;animation-delay:0s;animation-duration:17s"></span>
+        <span class="spark" style="left:16%;animation-delay:4s;animation-duration:14s"></span>
+        <span class="spark" style="left:27%;animation-delay:8s;animation-duration:19s"></span>
+        <span class="spark" style="left:38%;animation-delay:2s;animation-duration:15s"></span>
+        <span class="spark" style="left:47%;animation-delay:11s;animation-duration:18s"></span>
+        <span class="spark" style="left:58%;animation-delay:6s;animation-duration:13s"></span>
+        <span class="spark" style="left:67%;animation-delay:1s;animation-duration:16s"></span>
+        <span class="spark" style="left:77%;animation-delay:9s;animation-duration:20s"></span>
+        <span class="spark" style="left:86%;animation-delay:5s;animation-duration:14s"></span>
+        <span class="spark" style="left:94%;animation-delay:12s;animation-duration:17s"></span>
+    </div>
     <div class="progress" id="progress" aria-hidden="true"></div>
 
     <nav class="nav-pill" id="nav">
@@ -101,7 +117,7 @@ const socials = [
     </nav>
 
     <section class="hero" id="hero">
-        <div class="eclipse" aria-hidden="true"></div>
+        <svg class="mj" viewBox="0 0 240 480" aria-hidden="true"><Fragment set:html={MJ} /></svg>
         <div class="spotlight" aria-hidden="true"></div>
         <svg class="brand-watermark" viewBox="0 0 100 100" aria-hidden="true"><path d={BRAND} /></svg>
         <p class="kicker rv">Hi, I am</p>
@@ -172,6 +188,11 @@ const socials = [
     </section>
 
     <footer class="foot" id="contact">
+        <header class="m-head rv">
+            <svg class="m-brand" viewBox="0 0 100 100" aria-hidden="true"><path d={BRAND} /></svg>
+            <h2 class="m-title gold">CONTACT</h2>
+            <p class="m-sub">find me around the web</p>
+        </header>
         <blockquote class="quote rv">
             "Those who were seen dancing were thought to be insane by those who could not hear the music."
             <small>- Friedrich Nietzsche</small>
@@ -188,6 +209,22 @@ const socials = [
 
 <script>
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.documentElement.classList.add('js');
+
+    // bidirectional reveals (set up first so content can never be stranded invisible)
+    const revealAll = () => document.querySelectorAll('.rv').forEach((el) => el.classList.add('rv-in'));
+    if ('IntersectionObserver' in window) {
+        let ioWorking = false;
+        const io = new IntersectionObserver((entries) => {
+            ioWorking = true;
+            for (const e of entries) e.target.classList.toggle('rv-in', e.isIntersecting);
+        }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+        document.querySelectorAll('.rv').forEach((el) => io.observe(el));
+        // fail-open: if the observer never reports back, show everything
+        setTimeout(() => { if (!ioWorking) revealAll(); }, 3000);
+    } else {
+        revealAll();
+    }
 
     // loader
     const loader = document.getElementById('loader');
@@ -216,12 +253,6 @@ const socials = [
         };
         requestAnimationFrame(tick);
     }
-
-    // bidirectional reveals
-    const io = new IntersectionObserver((entries) => {
-        for (const e of entries) e.target.classList.toggle('rv-in', e.isIntersecting);
-    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
-    document.querySelectorAll('.rv').forEach((el) => io.observe(el));
 
     // flip words
     const words = ['ART', 'CODE', 'WRITING'];
