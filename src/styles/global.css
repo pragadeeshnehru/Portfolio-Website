@@ -556,3 +556,31 @@ section[id], footer[id] { scroll-margin-top: 95px; }
 .panels .panel { display: inline-block; width: 100%; margin: 0 0 1.6rem; break-inside: avoid; vertical-align: top; }
 .panels .panel img { width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; }
 @media(max-width:640px) { .panels { columns: 1; } }
+
+/* Clear, color-led hover: glow the glyph, never a background tile. */
+:root { --generic-glow: #9164e8; --nav-glow: #1877df; }
+:root[data-theme="dark"] { --generic-glow: #b69aff; --nav-glow: #69b7ff; }
+.tech, .tech:hover, .tech:focus-within { background: transparent; border: 0; box-shadow: none; }
+.tech[style*="#b8b8c8"], .tech[style*="#bcbcbc"] { --stack-color: var(--generic-glow) !important; }
+.dock-item, .dock-item:hover, .dock-item:focus-visible { border-color: transparent; background: transparent; box-shadow: none; }
+.dock-item { --social-color: var(--generic-glow); transition: transform .28s ease; }
+.dock-item[aria-label="X"], .dock-item[aria-label="GitHub"] { --social-color: var(--generic-glow); }
+.dock-item svg { transition: fill .28s ease, filter .28s ease, transform .28s ease; }
+.dock-item:focus-visible { outline: 2px solid var(--social-color); outline-offset: 3px; }
+.section-rail { border: 0; background: transparent; backdrop-filter: none; }
+.section-rail button { transition: color .25s ease, transform .25s ease, filter .25s ease; }
+.section-rail button.is-active { color: var(--nav-glow); }
+.section-rail button:hover, .section-rail button:focus-visible { color: var(--nav-glow); filter: drop-shadow(0 0 7px var(--nav-glow)); transform: translateX(-4px); outline-offset: 2px; }
+.section-rail button.is-active i { box-shadow: 0 0 12px var(--nav-glow); }
+@keyframes glyph-glow { from { filter: drop-shadow(0 0 4px var(--hover-glow)) drop-shadow(0 0 8px color-mix(in srgb, var(--hover-glow) 40%, transparent)); } to { filter: drop-shadow(0 0 7px var(--hover-glow)) drop-shadow(0 0 16px color-mix(in srgb, var(--hover-glow) 55%, transparent)); } }
+@media (hover: hover) and (pointer: fine) {
+ .tech:hover svg { --hover-glow: var(--stack-color); fill: var(--stack-color); transform: translateY(-5px) scale(1.08); animation: glyph-glow 1.1s ease-in-out infinite alternate; }
+ .tech:hover span { color: var(--bone); text-shadow: 0 0 12px var(--stack-color); }
+ .dock-item:hover { transform: translateY(-5px) scale(1.08); }
+ .dock-item:hover svg, .dock-item:focus-visible svg { --hover-glow: var(--social-color); fill: var(--social-color); animation: glyph-glow 1.1s ease-in-out infinite alternate; }
+}
+@media (prefers-reduced-motion: reduce) {
+ .tech svg, .dock-item, .dock-item svg, .section-rail button { transition: none; }
+ .tech:hover svg, .dock-item:hover svg, .dock-item:focus-visible svg { animation: none; filter: drop-shadow(0 0 7px var(--hover-glow)); }
+ .tech:hover svg, .dock-item:hover, .section-rail button:hover, .section-rail button:focus-visible { transform: none; }
+}
