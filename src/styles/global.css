@@ -509,3 +509,5 @@ section[id], footer[id] { scroll-margin-top: 95px; }
 .art-caption h2 { font-size: clamp(1.2rem, 2.5vw, 2rem); line-height: 1.25; margin: 0 0 1rem; }
 .art-caption p { font-size: .95rem; line-height: 1.7; color: rgba(var(--fg-rgb),.8); }
 @media(max-width:640px) { .art-stage { grid-template-columns: 1fr; grid-template-rows: minmax(0, 1fr) auto; gap: 16px; padding: 60px 18px 22px; } .art-stage img { max-height: calc(92svh - 240px); } .art-caption { text-align: center; padding: 0; } .art-caption h2 { margin-bottom: .5rem; } .art-caption p { margin: 0; font-size: .85rem; } }
+
+.hero-name { font-style: italic; padding-inline: .12em; }
