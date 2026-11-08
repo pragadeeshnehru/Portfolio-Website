@@ -172,6 +172,11 @@ const socials = [
     </section>
 
     <footer class="foot" id="contact">
+        <header class="m-head rv">
+            <svg class="m-brand" viewBox="0 0 100 100" aria-hidden="true"><path d={BRAND} /></svg>
+            <h2 class="m-title gold">CONTACT</h2>
+            <p class="m-sub">find me around the web</p>
+        </header>
         <blockquote class="quote rv">
             "Those who were seen dancing were thought to be insane by those who could not hear the music."
             <small>- Friedrich Nietzsche</small>
@@ -188,6 +193,22 @@ const socials = [
 
 <script>
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.documentElement.classList.add('js');
+
+    // bidirectional reveals (set up first so content can never be stranded invisible)
+    const revealAll = () => document.querySelectorAll('.rv').forEach((el) => el.classList.add('rv-in'));
+    if ('IntersectionObserver' in window) {
+        let ioWorking = false;
+        const io = new IntersectionObserver((entries) => {
+            ioWorking = true;
+            for (const e of entries) e.target.classList.toggle('rv-in', e.isIntersecting);
+        }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+        document.querySelectorAll('.rv').forEach((el) => io.observe(el));
+        // fail-open: if the observer never reports back, show everything
+        setTimeout(() => { if (!ioWorking) revealAll(); }, 3000);
+    } else {
+        revealAll();
+    }
 
     // loader
     const loader = document.getElementById('loader');
@@ -216,12 +237,6 @@ const socials = [
         };
         requestAnimationFrame(tick);
     }
-
-    // bidirectional reveals
-    const io = new IntersectionObserver((entries) => {
-        for (const e of entries) e.target.classList.toggle('rv-in', e.isIntersecting);
-    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
-    document.querySelectorAll('.rv').forEach((el) => io.observe(el));
 
     // flip words
     const words = ['ART', 'CODE', 'WRITING'];
