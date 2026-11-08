@@ -589,3 +589,19 @@ section[id], footer[id] { scroll-margin-top: 95px; }
     mask-repeat: repeat, repeat, no-repeat;
     mask-composite: intersect;
 }
+
+/* About: editorial index of interests; glyph sigils replace photos. */
+.personas { grid-template-columns: 1fr; gap: 0; margin-top: 1.4rem; border-top: 1px solid rgba(var(--fg-rgb),.12); }
+#about .personas { grid-template-columns: 1fr; }
+.persona { display: grid; grid-template-columns: auto auto 1fr; align-items: center; gap: 1.2rem; padding: 1.2rem .25rem; border: 0; border-bottom: 1px solid rgba(var(--fg-rgb),.12); border-radius: 0; background: none; box-shadow: none; }
+.persona:nth-child(4n+1), .persona:nth-child(4n+2), .persona:nth-child(4n+3), .persona:nth-child(4n+4) { background: none; }
+.persona:hover { box-shadow: none; }
+.persona .p-idx { font: 600 .72rem var(--body); letter-spacing: .18em; color: rgba(var(--fg-rgb),.45); }
+.persona .p-glyph { width: 52px; height: 52px; display: grid; place-items: center; border: 1px solid rgba(var(--fg-rgb),.16); border-radius: 14px; background: rgba(var(--bg-rgb),.4); }
+.persona .p-glyph svg { width: 24px; height: 24px; fill: rgba(var(--fg-rgb),.8); transition: fill .25s ease, transform .25s ease, filter .25s ease; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+ .persona:hover .p-glyph svg { fill: var(--nav-glow); --hover-glow: var(--nav-glow); animation: glyph-glow 1.1s ease-in-out infinite alternate; transform: translateY(-2px); }
+}
+.persona strong { letter-spacing: .1em; text-transform: uppercase; font-size: .95rem; }
+.persona div { padding: 0; }
+@media (max-width: 640px) { .persona { grid-template-columns: auto 1fr; gap: .9rem; } .persona .p-glyph { display: none; } }
