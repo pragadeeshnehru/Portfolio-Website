@@ -450,3 +450,7 @@ section[id], footer[id] { scroll-margin-top: 95px; }
 
 .hero-bio { max-width: 530px; margin: .9rem 1rem 0; font-size: clamp(.88rem, 1.3vw, 1rem); line-height: 1.8; color: rgba(var(--fg-rgb),.85); }
 @media(max-width:640px) { .hero-bio { max-width: 330px; margin-top: .65rem; font-size: .86rem; line-height: 1.7; } .hero .scroll-cue { margin-top: 1.25rem; } }
+
+/* Darker upward particles stay visible on the light surface. */
+:root:not([data-theme="dark"]) .spark { background: #614794; width: 4px; height: 4px; box-shadow: 0 0 3px rgba(97,71,148,.2); }
+:root:not([data-theme="dark"]) .spark:nth-child(odd) { background: #287568; }
