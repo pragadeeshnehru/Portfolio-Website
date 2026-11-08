@@ -88,6 +88,31 @@ img { max-width: 100%; }
 
 /* background animation layer */
 .bg-anim { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+/* Fine architectural grid; the brighter layer follows a desktop pointer. */
+.pattern-base, .pattern-light { position: absolute; inset: 0; }
+.pattern-base {
+    background-image: linear-gradient(rgba(216,168,78,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(216,168,78,.055) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: linear-gradient(to bottom, #000, rgba(0,0,0,.35));
+}
+.pattern-light {
+    --px: 65vw; --py: 40vh;
+    background-image: linear-gradient(rgba(216,168,78,.32) 1px, transparent 1px), linear-gradient(90deg, rgba(216,168,78,.32) 1px, transparent 1px), radial-gradient(circle at var(--px) var(--py), rgba(216,168,78,.12), transparent 320px);
+    background-size: 48px 48px, 48px 48px, auto;
+    mask-image: radial-gradient(circle 300px at var(--px) var(--py), #000, transparent);
+}
+.mobile-aura { display: none; }
+@media (hover: none), (pointer: coarse) {
+    .pattern-light { display: none; }
+    .pattern-base { background-size: 36px 36px; }
+    .mobile-aura {
+        display: block; position: absolute; width: 100vw; height: 100vw; left: -25vw; top: 15vh;
+        background: radial-gradient(circle, rgba(216,168,78,.19), rgba(193,18,31,.08) 35%, transparent 68%);
+        animation: aura-roam 16s ease-in-out infinite alternate;
+    }
+}
+@keyframes aura-roam { to { transform: translate(45vw, 30vh) scale(1.25); opacity: .7; } }
+@media (prefers-reduced-motion: reduce) { .pattern-light { display: none; } }
 .bg-glow { position: absolute; border-radius: 50%; }
 .bg-glow.one { width: 52vw; height: 52vw; left: -14vw; top: -12vw; background: radial-gradient(circle, rgba(193,18,31,.17), transparent 62%); animation: glow-drift-1 26s ease-in-out infinite alternate; }
 .bg-glow.two { width: 44vw; height: 44vw; right: -12vw; top: 34vh; background: radial-gradient(circle, rgba(216,168,78,.11), transparent 62%); animation: glow-drift-2 34s ease-in-out infinite alternate; }
@@ -196,7 +221,12 @@ img { max-width: 100%; }
     background: #101014; border: 1px solid rgba(236,229,216,.25); border-left: 3px solid var(--blood);
     transition: transform .25s ease, box-shadow .25s ease;
 }
-.article:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(216,168,78,.55); }
+.article:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; box-shadow: 0 0 24px rgba(216,168,78,.16); }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .persona.rv-in, .panel.rv-in { transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)); transition: transform .18s ease-out, box-shadow .25s ease; }
+    .persona:hover, .panel:hover { box-shadow: 9px 12px 0 rgba(193,18,31,.5), 0 0 28px rgba(216,168,78,.12); }
+    .article:hover { transform: translateY(-6px); border-color: rgba(216,168,78,.7); box-shadow: 0 12px 28px rgba(0,0,0,.35), 0 0 24px rgba(216,168,78,.15); }
+}
 .article strong { display: block; font-size: .95rem; line-height: 1.45; margin-bottom: .45rem; }
 .article span { font-size: .76rem; color: rgba(236,229,216,.55); }
 .articles-status { color: rgba(236,229,216,.6); font-size: .9rem; text-align: center; }
