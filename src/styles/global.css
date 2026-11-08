@@ -549,4 +549,10 @@ section[id], footer[id] { scroll-margin-top: 95px; }
  .hero-copy .hero-name { font-size: clamp(2.8rem, 5vw, 5.8rem); padding-left: 0; letter-spacing: -.055em; }
  .hero-copy .hero-sub { text-align: left; }
  .hero-copy .hero-bio { margin-left: 0; max-width: 490px; }
-                        }
+}
+
+/* Natural-ratio masonry: images determine their own card height. */
+.panels { display: block; columns: 3 230px; column-gap: 1.6rem; }
+.panels .panel { display: inline-block; width: 100%; margin: 0 0 1.6rem; break-inside: avoid; vertical-align: top; }
+.panels .panel img { width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; }
+@media(max-width:640px) { .panels { columns: 1; } }
