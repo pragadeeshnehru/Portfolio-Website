@@ -409,3 +409,5 @@ section[id], footer[id] { scroll-margin-top: 95px; }
 .pattern-patches i:nth-child(3) { left: 34%; bottom: 2%; background: radial-gradient(ellipse, rgba(255,145,181,.3), transparent 68%); }
 @media (hover: none), (pointer: coarse) { .pattern-patches { mask-image: none; opacity: .4; } }
 @media (prefers-reduced-motion: reduce) { .pattern-patches { mask-image: none; opacity: .25; } }
+
+.theme-toggle { position: fixed; right: max(20px, env(safe-area-inset-right)); bottom: max(20px, env(safe-area-inset-bottom)); z-index: 44; min-width: 68px; min-height: 44px; box-shadow: 0 4px 18px rgba(0,0,0,.12); }
