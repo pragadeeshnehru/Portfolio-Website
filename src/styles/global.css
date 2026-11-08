@@ -442,3 +442,8 @@ section[id], footer[id] { scroll-margin-top: 95px; }
  .hero .scroll-cue { margin-top: 1.6rem; }
 }
 @media (prefers-reduced-motion: reduce) { .hero-name { background: none; color: var(--bone); } .role-icons svg:hover { transform: none; } }
+
+/* Transparent reading areas: one consistent pattern, contrast from the type. */
+.m-head, .quote, .hero-sub, .name-frame, .tech-group { background: transparent; }
+.hero-sub { color: var(--bone); }
+.nav-link.is-active { color: #19191e; background: var(--note-yellow); box-shadow: 0 2px 8px rgba(0,0,0,.1); font-weight: 700; }
