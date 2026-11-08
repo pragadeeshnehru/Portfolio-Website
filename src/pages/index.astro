@@ -381,10 +381,12 @@ const socials = [
         resize();
         window.addEventListener('resize', resize);
         const pts = [];
+        let trailFrame = 0;
         const trailAccent = ['#f8e55b', '#9b7bff', '#83e3b0', '#ff91b5'];
         window.addEventListener('pointermove', (e) => {
             pts.push({ x: e.clientX, y: e.clientY, life: 1, gold: Math.random() > 0.5 });
             if (pts.length > 50) pts.shift();
+            if (!trailFrame) trailFrame = requestAnimationFrame(draw);
         });
         const draw = () => {
             ctx.clearRect(0, 0, w, h);
@@ -399,9 +401,8 @@ const socials = [
                 ctx.fill();
             }
             while (pts.length && pts[0].life < 0.04) pts.shift();
-            requestAnimationFrame(draw);
+            trailFrame = pts.length ? requestAnimationFrame(draw) : 0;
         };
-        requestAnimationFrame(draw);
     } else if (canvas) canvas.remove();
 
     // medium feed
