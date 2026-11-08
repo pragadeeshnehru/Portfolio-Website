@@ -596,6 +596,8 @@ section[id], footer[id] { scroll-margin-top: 95px; }
 .persona { display: grid; grid-template-columns: auto auto 1fr; align-items: center; gap: 1.2rem; padding: 1.2rem .25rem; border: 0; border-bottom: 1px solid rgba(var(--fg-rgb),.12); border-radius: 0; background: none; box-shadow: none; }
 .persona:nth-child(4n+1), .persona:nth-child(4n+2), .persona:nth-child(4n+3), .persona:nth-child(4n+4) { background: none; }
 .persona:hover { box-shadow: none; }
+.persona, .persona strong { color: var(--bone); }
+.persona p { color: rgba(var(--fg-rgb),.75); }
 .persona .p-idx { font: 600 .72rem var(--body); letter-spacing: .18em; color: rgba(var(--fg-rgb),.45); }
 .persona .p-glyph { width: 52px; height: 52px; display: grid; place-items: center; border: 1px solid rgba(var(--fg-rgb),.16); border-radius: 14px; background: rgba(var(--bg-rgb),.4); }
 .persona .p-glyph svg { width: 24px; height: 24px; fill: rgba(var(--fg-rgb),.8); transition: fill .25s ease, transform .25s ease, filter .25s ease; }
