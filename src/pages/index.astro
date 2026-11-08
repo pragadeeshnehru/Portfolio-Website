@@ -427,7 +427,7 @@ const socials = [
         window.addEventListener('resize', resize);
         const pts = [];
         let trailFrame = 0;
-        const trailAccent = ['#f8e55b', '#9b7bff', '#83e3b0', '#ff91b5'];
+        const trailAccent = () => document.documentElement.dataset.theme === 'dark' ? ['#39ff78', '#b54bff'] : ['#00c94f', '#842dff'];
         window.addEventListener('pointermove', (e) => {
             pts.push({ x: e.clientX, y: e.clientY, life: 1, gold: Math.random() > 0.5 });
             if (pts.length > 12) pts.shift();
@@ -439,8 +439,8 @@ const socials = [
                 p.life *= 0.86;
                 ctx.beginPath();
                 ctx.globalAlpha = p.life * .2;
-                ctx.fillStyle = p.gold ? trailAccent[0] : trailAccent[1];
-                ctx.shadowColor = p.gold ? trailAccent[0] : trailAccent[1];
+                ctx.fillStyle = p.gold ? trailAccent()[0] : trailAccent()[1];
+                ctx.shadowColor = p.gold ? trailAccent()[0] : trailAccent()[1];
                 ctx.shadowBlur = 3;
                 ctx.arc(p.x, p.y, 0.5 + p.life * 1.2, 0, Math.PI * 2);
                 ctx.fill();
