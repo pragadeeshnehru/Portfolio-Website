@@ -64,6 +64,8 @@ const tech = [
         { svg: mysql, name: 'MySQL' }, { svg: mongodb, name: 'MongoDB' } ] },
 ];
 
+const techColors = {'ReactJS': '#61dafb', 'NextJS': '#b8b8c8', 'Tailwind': '#38bdf8', 'Three.js': '#bcbcbc', 'Node.js': '#68bf64', 'Shell': '#77e09e', 'Python': '#ffd343', 'C++': '#6295cb', 'C#': '#b37bd6', 'Java': '#f89820', 'JavaScript': '#f7df1e', 'MySQL': '#2d9ac7', 'MongoDB': '#47c46b'};
+
 const socials = [
     { svg: youtube, name: 'YouTube', href: 'https://www.youtube.com/@Excelsior004' },
     { svg: linkedin, name: 'LinkedIn', href: 'https://www.linkedin.com/in/pragadeesh-nehru-a26040257/' },
@@ -87,7 +89,7 @@ const socials = [
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
     <a class="skip-link" href="#about">Skip to content</a>
@@ -143,7 +145,7 @@ const socials = [
         </div>
         <p class="kicker rv">Hi, I am</p>
         <div class="name-frame rv">
-            <h1 class="hero-name">Pragadeesh</h1>
+            <h1 class="hero-name">PRAGADEESH</h1>
             <div class="hero-orn" aria-hidden="true"><span></span><svg viewBox="0 0 100 100"><path d={BRAND} /></svg><span></span></div>
         </div>
         <p class="hero-sub rv"><span>I am</span><span class="flip" id="flip">an artist</span></p>
@@ -204,7 +206,7 @@ const socials = [
                 <h3>{g.group}</h3>
                 <div class="tech-row">
                     {g.items.map((t) => (
-                        <div class="tech"><Fragment set:html={t.svg} /><span>{t.name}</span></div>
+                        <div class="tech" style={`--stack-color: ${techColors[t.name] || "#b29aff"}`}><Fragment set:html={t.svg} /><span>{t.name}</span></div>
                     ))}
                 </div>
             </div>
