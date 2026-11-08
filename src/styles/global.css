@@ -382,3 +382,18 @@ body { line-height: 1.65; }
 .skip-link:focus { top: 1rem; }
 section[id], footer[id] { scroll-margin-top: 95px; }
 @media (prefers-reduced-motion: reduce) { .section-icon { transform: none; } }
+
+/* Latest type and alignment direction. */
+:root, :root[data-theme="dark"] { --display: 'Montserrat', Arial, sans-serif; --body: 'Montserrat', Arial, sans-serif; }
+.hero-name { font-family: var(--display); font-weight: 700; font-size: clamp(2rem, 7.7vw, 7rem); letter-spacing: -.045em; }
+.hero-sub { width: 100%; justify-content: center; text-align: center; }
+.flip { min-width: 0; text-align: left; }
+.tech { border-radius: 12px; padding: .5rem .2rem; transition: background .22s ease; }
+.tech svg, .tech span { transition: color .22s ease, fill .22s ease, filter .22s ease, transform .22s ease; }
+@media (hover: hover) and (pointer: fine) {
+ .tech:hover svg { fill: var(--stack-color); filter: drop-shadow(0 0 9px var(--stack-color)); transform: translateY(-4px); }
+ .tech:hover span { color: var(--bone); text-shadow: 0 0 12px var(--stack-color); }
+ .tech:hover { background: rgba(var(--fg-rgb),.045); }
+}
+@media (max-width: 420px) { .hero-name { font-size: clamp(1.65rem, 8vw, 2rem); } }
+@media (prefers-reduced-motion: reduce) { .tech:hover svg { transform: none; } }
