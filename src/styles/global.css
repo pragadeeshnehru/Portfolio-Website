@@ -421,3 +421,24 @@ section[id], footer[id] { scroll-margin-top: 95px; }
 .name-frame { background: radial-gradient(ellipse at center, rgba(var(--bg-rgb),.95), rgba(var(--bg-rgb),.7) 50%, rgba(var(--bg-rgb),0) 75%); }
 .tech-group { background: rgba(var(--bg-rgb),.9); padding: 1.5rem 1rem; border-radius: 20px; }
 .m-sub, .tech-group h3, .quote small { color: rgba(var(--fg-rgb),.78); }
+
+/* Selective hero motion: stable icons, a quiet sweep inside the name. */
+.role-icons svg { animation: none; transform: none; transition: transform .2s ease, box-shadow .2s ease; }
+@media (hover: hover) and (pointer: fine) { .role-icons svg:hover { transform: translateY(-3px) scale(1.08); box-shadow: 0 6px 18px rgba(var(--fg-rgb),.16); } }
+.atom { animation: none; }
+.hero .tw { animation: none; opacity: .16; }
+.hero .scroll-cue { animation: none; }
+.hero-name { font-weight: 800; font-size: clamp(2.2rem, 8.4vw, 8rem); background: linear-gradient(105deg, var(--bone) 0%, var(--bone) 42%, var(--blood) 49%, var(--bone) 56%, var(--bone) 100%); background-size: 250% 100%; background-clip: text; -webkit-background-clip: text; color: transparent; animation: name-sweep 9s ease-in-out infinite; }
+@keyframes name-sweep { 0%, 25% { background-position: 100% 50%; } 65%, 100% { background-position: 0% 50%; } }
+.hero-orn::after { width: 8px; height: 8px; border-radius: 2px; background: var(--blood); animation: name-halo 5s ease-in-out infinite; }
+@keyframes name-halo { 50% { box-shadow: 0 0 0 7px rgba(var(--accent-rgb),.12), 0 0 18px rgba(var(--accent-rgb),.24); transform: rotate(90deg); } }
+@media (max-width: 640px) {
+ .hero { min-height: min(780px, 94svh); padding: 11rem 1rem 3rem; }
+ .atom { top: 72px; width: 108px; margin-left: -54px; }
+ .name-frame { padding: .5rem 0; margin: .1rem 0 .35rem; }
+ .hero-name { font-size: clamp(1.9rem, 8.8vw, 3.2rem); letter-spacing: -.05em; }
+ .role-icons { margin-bottom: .65rem; gap: .9rem; }
+ .hero-sub { margin-top: .5rem; }
+ .hero .scroll-cue { margin-top: 1.6rem; }
+}
+@media (prefers-reduced-motion: reduce) { .hero-name { background: none; color: var(--bone); } .role-icons svg:hover { transform: none; } }
