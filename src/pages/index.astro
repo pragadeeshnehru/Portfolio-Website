@@ -1,0 +1,320 @@
+---
+import '../styles/global.css';
+import react from '../icons/react.svg?raw';
+import nextdotjs from '../icons/nextdotjs.svg?raw';
+import tailwindcss from '../icons/tailwindcss.svg?raw';
+import threedotjs from '../icons/threedotjs.svg?raw';
+import nodedotjs from '../icons/nodedotjs.svg?raw';
+import gnubash from '../icons/gnubash.svg?raw';
+import python from '../icons/python.svg?raw';
+import cplusplus from '../icons/cplusplus.svg?raw';
+import csharp from '../icons/csharp.svg?raw';
+import openjdk from '../icons/openjdk.svg?raw';
+import javascript from '../icons/javascript.svg?raw';
+import mysql from '../icons/mysql.svg?raw';
+import mongodb from '../icons/mongodb.svg?raw';
+import youtube from '../icons/youtube.svg?raw';
+import linkedin from '../icons/linkedin.svg?raw';
+import x from '../icons/x.svg?raw';
+import github from '../icons/github.svg?raw';
+
+const BRAND = 'M50 2 L57 22 L74 8 L68 32 L92 24 L76 46 L94 68 L70 64 L72 92 L54 72 L50 98 L46 72 L28 92 L30 64 L6 68 L24 46 L8 24 L32 32 L26 8 L43 22 Z';
+
+const personas = [
+    { img: '/img/dev.webp', alt: 'Pragadeesh, developer', title: 'Software Developer and Curious Learner',
+      text: 'With a love for reading and writing, I explore topics ranging from philosophy to fiction. I enjoy expanding my technical skills by learning about machine learning to create meaningful and practical solutions.' },
+    { img: '/img/writer.webp', alt: 'Writing desk', title: 'Creative Technologist and Writer',
+      text: 'I strive to blend creativity with logic in my work. Writing fiction and philosophy inspires me to build thoughtful solutions, whether through code or learning new technologies like machine learning.' },
+    { img: '/img/artist.webp', alt: 'Artwork in progress', title: 'Developer, Artist, and Lifelong Learner',
+      text: 'Curious by nature, I explore diverse interests, from philosophy and fiction writing to learning a bit of machine learning. My goal is to continuously improve my skills and create meaningful, user-friendly solutions.' },
+    { img: '/img/designer.webp', alt: 'Design work', title: 'Writer and Tech Enthusiast',
+      text: 'I am a developer with a passion for combining creativity and technology. Whether it is writing fiction, exploring philosophy, or learning about machine learning, I strive to bring thoughtful solutions to every project I work on.' },
+];
+
+const panels = [
+    { src: '/art/guts.webp', title: 'Guts', quote: "I'd rather fight for my life than live it." },
+    { src: '/art/hiphop.webp', title: 'Hip Hop', quote: 'If I told you a flower bloomed in a dark room would you trust it?' },
+    { src: '/art/skull-knight.webp', title: 'Skull Knight', quote: 'Struggle, endure, contend.' },
+    { src: '/art/butterfly-girl.webp', title: 'Butterfly Girl', quote: 'Perfectly imperfect!' },
+    { src: '/art/guts-griffith.webp', title: 'Guts & Griffith', quote: 'The greatest nemesis.' },
+    { src: '/art/itadori.webp', title: 'Itadori Yuji', quote: 'Hesitation is defeat.' },
+    { src: '/art/elden-lord.webp', title: 'Elden Lord', quote: 'Love over Power.' },
+    { src: '/art/gal-gadot.webp', title: 'Gal Gadot', quote: 'Timeless elegance.' },
+    { src: '/art/jack-sparrow.webp', title: 'Jack Sparrow', quote: "Where's the rum gone?" },
+    { src: '/art/walter-white.webp', title: 'Walter White', quote: 'Say my name.' },
+    { src: '/art/paul-atriedes.webp', title: 'Paul Atreides', quote: 'The eye of the Messiah.' },
+    { src: '/art/doom.webp', title: 'Doom', quote: 'The only thing they fear is you.' },
+    { src: '/art/assassin-ezio.webp', title: 'Assassin Ezio', quote: 'The world will not suffer if it ends too soon.' },
+    { src: '/art/thomas-shelby.webp', title: 'Thomas Shelby', quote: "Oh and there's a woman!" },
+    { src: '/art/sekiro.webp', title: 'Sekiro', quote: 'Hesitation is defeat.' },
+    { src: '/art/berserker.webp', title: 'Berserker Armour', quote: 'A beast of darkness.' },
+    { src: '/art/breakingbad.webp', title: 'Breaking Bad', quote: 'Live free or die.' },
+];
+
+const tech = [
+    { group: 'My Expertise', items: [
+        { svg: react, name: 'ReactJS' }, { svg: nextdotjs, name: 'NextJS' }, { svg: tailwindcss, name: 'Tailwind' },
+        { svg: threedotjs, name: 'Three.js' }, { svg: nodedotjs, name: 'Node.js' } ] },
+    { group: 'Languages', items: [
+        { svg: gnubash, name: 'Shell' }, { svg: python, name: 'Python' }, { svg: cplusplus, name: 'C++' },
+        { svg: csharp, name: 'C#' }, { svg: openjdk, name: 'Java' }, { svg: javascript, name: 'JavaScript' } ] },
+    { group: 'Databases', items: [
+        { svg: mysql, name: 'MySQL' }, { svg: mongodb, name: 'MongoDB' } ] },
+];
+
+const socials = [
+    { svg: youtube, name: 'YouTube', href: 'https://www.youtube.com/@Excelsior004' },
+    { svg: linkedin, name: 'LinkedIn', href: 'https://www.linkedin.com/in/pragadeesh-nehru-a26040257/' },
+    { svg: x, name: 'X', href: 'https://x.com/pragdxshn' },
+    { svg: github, name: 'GitHub', href: 'https://github.com/pragadeeshnehru' },
+];
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pragadeesh Nehru</title>
+    <meta name="description" content="Pragadeesh Nehru - developer, artist and writer. Portfolio." />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Manrope:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <div class="loader" id="loader" aria-hidden="true">
+        <div class="loader-eclipse" id="loaderEclipse"></div>
+        <svg class="loader-brand" viewBox="0 0 100 100"><path d={BRAND} /></svg>
+        <div class="loader-name">PRAGADEESH</div>
+        <div class="loader-count" id="loaderCount">0</div>
+        <div class="loader-bar"><span id="loaderBar"></span></div>
+    </div>
+
+    <canvas class="ember-trail" id="trail" aria-hidden="true"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="progress" id="progress" aria-hidden="true"></div>
+
+    <nav class="nav-pill" id="nav">
+        <button class="nav-link" data-go="about">About</button>
+        <button class="nav-link" data-go="works">Works</button>
+        <button class="nav-link" data-go="contact">Contact</button>
+    </nav>
+
+    <section class="hero" id="hero">
+        <div class="eclipse" aria-hidden="true"></div>
+        <div class="spotlight" aria-hidden="true"></div>
+        <svg class="brand-watermark" viewBox="0 0 100 100" aria-hidden="true"><path d={BRAND} /></svg>
+        <p class="kicker rv">Hi, I am</p>
+        <h1 class="hero-name rv">PRAGADEESH</h1>
+        <p class="hero-sub rv">a stage for <span class="flip" id="flip">ART</span></p>
+        <p class="scroll-cue rv" aria-hidden="true">scroll &#9662;</p>
+    </section>
+
+    <section class="movement" id="about">
+        <header class="m-head rv">
+            <svg class="m-brand" viewBox="0 0 100 100" aria-hidden="true"><path d={BRAND} /></svg>
+            <h2 class="m-title ink">ABOUT</h2>
+            <p class="m-sub">developer, writer, artist - the struggler behind the work</p>
+        </header>
+        <div class="personas">
+            {personas.map((p, i) => (
+                <div class={`persona rv ${i % 2 ? 'from-right' : 'from-left'}`}>
+                    <img src={p.img} alt={p.alt} loading="lazy" decoding="async" />
+                    <div><strong>{p.title}</strong><p>{p.text}</p></div>
+                </div>
+            ))}
+        </div>
+    </section>
+
+    <section class="movement" id="works">
+        <header class="m-head rv">
+            <svg class="m-brand" viewBox="0 0 100 100" aria-hidden="true"><path d={BRAND} /></svg>
+            <h2 class="m-title ink">ART</h2>
+            <p class="m-sub">the manga wall - panels from the gallery</p>
+        </header>
+        <div class="panels">
+            {panels.map((p, i) => (
+                <figure class={`panel rv ${i % 2 ? 'from-right' : 'from-left'}`}>
+                    <img src={p.src} alt={p.title} loading="lazy" decoding="async" />
+                    <figcaption><strong>{p.title}</strong><span>{p.quote}</span></figcaption>
+                </figure>
+            ))}
+        </div>
+    </section>
+
+    <section class="movement" id="writing">
+        <header class="m-head rv">
+            <svg class="m-brand" viewBox="0 0 100 100" aria-hidden="true"><path d={BRAND} /></svg>
+            <h2 class="m-title gold">WRITING</h2>
+            <p class="m-sub">books, culture and criticism - latest from Medium</p>
+        </header>
+        <div class="articles rv" id="articles">
+            <p class="articles-status">Loading articles...</p>
+        </div>
+    </section>
+
+    <section class="movement" id="craft">
+        <header class="m-head rv">
+            <svg class="m-brand" viewBox="0 0 100 100" aria-hidden="true"><path d={BRAND} /></svg>
+            <h2 class="m-title ink">THE CRAFT</h2>
+            <p class="m-sub">the stack behind the stage</p>
+        </header>
+        {tech.map((g) => (
+            <div class="tech-group rv">
+                <h3>{g.group}</h3>
+                <div class="tech-row">
+                    {g.items.map((t) => (
+                        <div class="tech"><Fragment set:html={t.svg} /><span>{t.name}</span></div>
+                    ))}
+                </div>
+            </div>
+        ))}
+    </section>
+
+    <footer class="foot" id="contact">
+        <blockquote class="quote rv">
+            "Those who were seen dancing were thought to be insane by those who could not hear the music."
+            <small>- Friedrich Nietzsche</small>
+        </blockquote>
+        <div class="dock rv">
+            {socials.map((s) => (
+                <a class="dock-item" href={s.href} target="_blank" rel="noreferrer" aria-label={s.name}>
+                    <Fragment set:html={s.svg} />
+                </a>
+            ))}
+        </div>
+        <p class="foot-line rv">Built by Pragadeesh Nehru</p>
+    </footer>
+
+<script>
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // loader
+    const loader = document.getElementById('loader');
+    const hero = document.getElementById('hero');
+    const finish = () => {
+        loader.classList.add('lift');
+        hero.classList.add('hero-in');
+        setTimeout(() => loader.remove(), 900);
+    };
+    if (reduce) { finish(); }
+    else {
+        document.body.style.overflow = 'hidden';
+        const count = document.getElementById('loaderCount');
+        const bar = document.getElementById('loaderBar');
+        const ec = document.getElementById('loaderEclipse');
+        const start = performance.now();
+        const total = 1900;
+        const tick = (t) => {
+            const p = Math.min(1, (t - start) / total);
+            const e = 1 - Math.pow(1 - p, 3);
+            count.textContent = String(Math.round(e * 100));
+            bar.style.width = (e * 100) + '%';
+            ec.style.transform = 'scale(' + (0.6 + e * 0.4) + ')';
+            if (p < 1) requestAnimationFrame(tick);
+            else { document.body.style.overflow = ''; setTimeout(finish, 300); }
+        };
+        requestAnimationFrame(tick);
+    }
+
+    // bidirectional reveals
+    const io = new IntersectionObserver((entries) => {
+        for (const e of entries) e.target.classList.toggle('rv-in', e.isIntersecting);
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll('.rv').forEach((el) => io.observe(el));
+
+    // flip words
+    const words = ['ART', 'CODE', 'WRITING'];
+    const flip = document.getElementById('flip');
+    let wi = 0;
+    if (!reduce) setInterval(() => {
+        wi = (wi + 1) % words.length;
+        flip.textContent = words[wi];
+        flip.classList.remove('swap');
+        void flip.offsetWidth;
+        flip.classList.add('swap');
+    }, 2200);
+
+    // nav + progress
+    const nav = document.getElementById('nav');
+    const progress = document.getElementById('progress');
+    let ticking = false;
+    const onScroll = () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+            const y = window.scrollY;
+            nav.classList.toggle('solid', y > 40);
+            const h = document.documentElement.scrollHeight - window.innerHeight;
+            progress.style.transform = 'scaleX(' + (h > 0 ? y / h : 0) + ')';
+            ticking = false;
+        });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    document.querySelectorAll('.nav-link').forEach((b) =>
+        b.addEventListener('click', () => document.getElementById(b.dataset.go)?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' })));
+
+    // ember trail
+    const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    const canvas = document.getElementById('trail');
+    if (fine && !reduce && canvas) {
+        const ctx = canvas.getContext('2d');
+        let w, h;
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        const resize = () => {
+            w = window.innerWidth; h = window.innerHeight;
+            canvas.width = w * dpr; canvas.height = h * dpr;
+            canvas.style.width = w + 'px'; canvas.style.height = h + 'px';
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        };
+        resize();
+        window.addEventListener('resize', resize);
+        const pts = [];
+        window.addEventListener('pointermove', (e) => {
+            pts.push({ x: e.clientX, y: e.clientY, life: 1, gold: Math.random() > 0.5 });
+            if (pts.length > 50) pts.shift();
+        });
+        const draw = () => {
+            ctx.clearRect(0, 0, w, h);
+            for (const p of pts) {
+                p.life *= 0.94;
+                ctx.beginPath();
+                ctx.fillStyle = p.gold ? 'rgba(216,168,78,' + (p.life * 0.85) + ')' : 'rgba(193,18,31,' + (p.life * 0.8) + ')';
+                ctx.shadowColor = p.gold ? '#d8a84e' : '#c1121f';
+                ctx.shadowBlur = 12;
+                ctx.arc(p.x, p.y, 1 + p.life * 3.2, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            while (pts.length && pts[0].life < 0.04) pts.shift();
+            requestAnimationFrame(draw);
+        };
+        requestAnimationFrame(draw);
+    } else if (canvas) canvas.remove();
+
+    // medium feed
+    const box = document.getElementById('articles');
+    fetch('/api/medium')
+        .then((r) => r.json())
+        .then((list) => {
+            if (!Array.isArray(list) || !list.length) throw new Error('empty');
+            box.innerHTML = '';
+            for (const a of list.slice(0, 6)) {
+                const el = document.createElement('a');
+                el.className = 'article';
+                el.href = a.link;
+                el.target = '_blank';
+                el.rel = 'noreferrer';
+                const date = a.pubDate ? new Date(a.pubDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) : '';
+                el.innerHTML = '<strong></strong><span></span>';
+                el.querySelector('strong').textContent = a.title;
+                el.querySelector('span').textContent = date;
+                box.appendChild(el);
+            }
+        })
+        .catch(() => {
+            box.innerHTML = '<p class="articles-status">Articles live at <a class="medium-link" href="https://medium.com/@pragadeeshnehru" target="_blank" rel="noreferrer">medium.com/@pragadeeshnehru</a></p>';
+        });
+</script>
+</body>
+</html>
