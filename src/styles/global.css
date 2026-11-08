@@ -447,3 +447,6 @@ section[id], footer[id] { scroll-margin-top: 95px; }
 .m-head, .quote, .hero-sub, .name-frame, .tech-group { background: transparent; }
 .hero-sub { color: var(--bone); }
 .nav-link.is-active { color: #19191e; background: var(--note-yellow); box-shadow: 0 2px 8px rgba(0,0,0,.1); font-weight: 700; }
+
+.hero-bio { max-width: 530px; margin: .9rem 1rem 0; font-size: clamp(.88rem, 1.3vw, 1rem); line-height: 1.8; color: rgba(var(--fg-rgb),.85); }
+@media(max-width:640px) { .hero-bio { max-width: 330px; margin-top: .65rem; font-size: .86rem; line-height: 1.7; } .hero .scroll-cue { margin-top: 1.25rem; } }
