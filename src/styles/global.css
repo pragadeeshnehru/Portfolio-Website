@@ -117,6 +117,33 @@ img { max-width: 100%; }
 .flip { display: inline-block; font-family: var(--display); font-weight: 700; color: var(--blood); min-width: 5ch; text-align: left; }
 .flip.swap { animation: flip-in .55s cubic-bezier(.2,.9,.3,1.2); }
 @keyframes flip-in { from { transform: rotateX(80deg) translateY(8px); opacity: 0; } }
+.role-icons { display: flex; gap: 1.4rem; justify-content: center; margin-bottom: .9rem; color: var(--gold); }
+.role-icons svg { width: 19px; height: 19px; opacity: .8; animation: icon-bob 6s ease-in-out infinite; }
+.role-icons svg:nth-child(2) { animation-delay: 1.5s; color: var(--bone); }
+.role-icons svg:nth-child(3) { animation-delay: 3s; }
+@keyframes icon-bob { 50% { transform: translateY(-4px); opacity: 1; } }
+.name-frame { position: relative; padding: 1.2rem 2.2rem .9rem; margin: .2rem 0 .6rem; }
+.name-frame::before, .name-frame::after { content: ''; position: absolute; width: 26px; height: 26px; border: 1px solid rgba(216,168,78,.45); pointer-events: none; }
+.name-frame::before { top: 0; left: 0; border-right: 0; border-bottom: 0; }
+.name-frame::after { bottom: 0; right: 0; border-left: 0; border-top: 0; }
+.name-frame .hero-name { margin: 0 0 .7rem; }
+.hero-orn { display: flex; align-items: center; justify-content: center; gap: .9rem; }
+.hero-orn span { width: 72px; height: 1px; background: linear-gradient(90deg, transparent, rgba(216,168,78,.55)); }
+.hero-orn span:last-child { transform: scaleX(-1); }
+.hero-orn svg { width: 13px; height: 13px; fill: var(--gold); opacity: .85; }
+.tw { position: absolute; width: 3px; height: 3px; border-radius: 50%; background: var(--bone); opacity: .12; pointer-events: none; animation: twinkle 5s ease-in-out infinite; }
+.tw.t1 { top: 16%; left: 14%; animation-delay: 0s; }
+.tw.t2 { top: 24%; right: 18%; animation-delay: 1.2s; }
+.tw.t3 { top: 58%; left: 9%; animation-delay: 2.4s; background: var(--gold); }
+.tw.t4 { top: 68%; right: 12%; animation-delay: 3.1s; }
+.tw.t5 { top: 40%; left: 22%; animation-delay: 4.2s; background: var(--gold); }
+@keyframes twinkle { 50% { opacity: .75; } }
+@media (max-width: 640px) {
+    .name-frame { padding: .8rem .6rem .6rem; }
+    .name-frame::before, .name-frame::after { display: none; }
+    .hero-orn span { width: 48px; }
+}
+
 .scroll-cue { margin-top: 3rem; font-size: .72rem; letter-spacing: .3em; color: rgba(236,229,216,.45); animation: cue 1.8s ease-in-out infinite; }
 @keyframes cue { 50% { transform: translateY(8px); opacity: .8; } }
 
@@ -208,4 +235,4 @@ img { max-width: 100%; }
     *, *::before, *::after { animation: none !important; transition: none !important; }
     html { scroll-behavior: auto; }
     .rv, .hero .rv { opacity: 1 !important; transform: none !important; }
-    }
+}
