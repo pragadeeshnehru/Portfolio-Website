@@ -20,16 +20,22 @@ import github from '../icons/github.svg?raw';
 
 const BRAND = 'M50 2 L57 22 L74 8 L68 32 L92 24 L76 46 L94 68 L70 64 L72 92 L54 72 L50 98 L46 72 L28 92 L30 64 L6 68 L24 46 L8 24 L32 32 L26 8 L43 22 Z';
 
-const ATOM = '<circle cx="100" cy="100" r="24" fill="none" stroke="var(--bone)" stroke-opacity=".16" stroke-width="1"/><circle cx="100" cy="100" r="36" fill="none" stroke="var(--bone)" stroke-opacity=".16" stroke-width="1"/><circle cx="100" cy="100" r="48" fill="none" stroke="var(--bone)" stroke-opacity=".16" stroke-width="1"/><circle cx="100" cy="100" r="60" fill="none" stroke="var(--bone)" stroke-opacity=".16" stroke-width="1"/><circle cx="100" cy="100" r="72" fill="none" stroke="var(--bone)" stroke-opacity=".16" stroke-width="1"/><circle cx="100" cy="100" r="84" fill="none" stroke="var(--bone)" stroke-opacity=".16" stroke-width="1"/><g class="nuc"><circle cx="100" cy="100" r="13" fill="var(--gold)" opacity=".08"/><circle cx="100" cy="100" r="5" fill="var(--gold)"/><circle cx="106.5" cy="103.8" r="4" fill="var(--gold)"/><circle cx="100.0" cy="107.5" r="4" fill="var(--bone)"/><circle cx="93.5" cy="103.8" r="4" fill="var(--gold)"/><circle cx="93.5" cy="96.2" r="4" fill="var(--bone)"/><circle cx="100.0" cy="92.5" r="4" fill="var(--gold)"/><circle cx="106.5" cy="96.2" r="4" fill="var(--bone)"/></g><circle class="rad r1" cx="100" cy="100" r="18" fill="none" stroke="var(--gold)" stroke-width="1"/><circle class="rad r2" cx="100" cy="100" r="18" fill="none" stroke="var(--gold)" stroke-width="1"/><circle class="rad r3" cx="100" cy="100" r="18" fill="none" stroke="var(--gold)" stroke-width="1"/><g class="sh sh1"><circle class="pe" cx="124.0" cy="100.0" r="3" fill="var(--gold)"/><circle cx="76.0" cy="100.0" r="1.8" fill="var(--bone)" opacity=".45"/></g><g class="sh sh2"><circle class="pe" cx="136.0" cy="100.0" r="3" fill="var(--gold)"/><circle cx="125.5" cy="125.5" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="100.0" cy="136.0" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="74.5" cy="125.5" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="64.0" cy="100.0" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="74.5" cy="74.5" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="100.0" cy="64.0" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="125.5" cy="74.5" r="1.8" fill="var(--bone)" opacity=".45"/></g><g class="sh sh3"><circle class="pe" cx="148.0" cy="100.0" r="3" fill="var(--gold)"/><circle cx="145.1" cy="116.4" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="136.8" cy="130.9" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="124.0" cy="141.6" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="108.3" cy="147.3" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="91.7" cy="147.3" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="76.0" cy="141.6" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="63.2" cy="130.9" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="54.9" cy="116.4" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="52.0" cy="100.0" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="54.9" cy="83.6" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="63.2" cy="69.1" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="76.0" cy="58.4" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="91.7" cy="52.7" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="108.3" cy="52.7" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="124.0" cy="58.4" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="136.8" cy="69.1" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="145.1" cy="83.6" r="1.8" fill="var(--bone)" opacity=".45"/></g><g class="sh sh4"><circle class="pe" cx="160.0" cy="100.0" r="3" fill="var(--gold)"/><circle cx="158.8" cy="111.7" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="155.4" cy="123.0" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="149.9" cy="133.3" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="142.4" cy="142.4" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="133.3" cy="149.9" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="123.0" cy="155.4" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="111.7" cy="158.8" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="100.0" cy="160.0" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="88.3" cy="158.8" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="77.0" cy="155.4" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="66.7" cy="149.9" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="57.6" cy="142.4" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="50.1" cy="133.3" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="44.6" cy="123.0" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="41.2" cy="111.7" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="40.0" cy="100.0" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="41.2" cy="88.3" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="44.6" cy="77.0" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="50.1" cy="66.7" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="57.6" cy="57.6" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="66.7" cy="50.1" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="77.0" cy="44.6" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="88.3" cy="41.2" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="100.0" cy="40.0" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="111.7" cy="41.2" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="123.0" cy="44.6" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="133.3" cy="50.1" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="142.4" cy="57.6" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="149.9" cy="66.7" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="155.4" cy="77.0" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="158.8" cy="88.3" r="1.8" fill="var(--bone)" opacity=".45"/></g><g class="sh sh5"><circle class="pe" cx="172.0" cy="100.0" r="3" fill="var(--gold)"/><circle cx="167.7" cy="124.6" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="155.2" cy="146.3" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="136.0" cy="162.4" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="112.5" cy="170.9" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="87.5" cy="170.9" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="64.0" cy="162.4" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="44.8" cy="146.3" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="32.3" cy="124.6" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="28.0" cy="100.0" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="32.3" cy="75.4" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="44.8" cy="53.7" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="64.0" cy="37.6" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="87.5" cy="29.1" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="112.5" cy="29.1" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="136.0" cy="37.6" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="155.2" cy="53.7" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="167.7" cy="75.4" r="1.8" fill="var(--bone)" opacity=".45"/></g><g class="sh sh6"><circle class="pe" cx="184.0" cy="100.0" r="3" fill="var(--gold)"/><circle cx="142.0" cy="172.7" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="58.0" cy="172.7" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="16.0" cy="100.0" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="58.0" cy="27.3" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="142.0" cy="27.3" r="1.8" fill="var(--bone)" opacity=".45"/></g>';
+const ATOM = '<circle cx="100" cy="100" r="24" fill="none" stroke="var(--bone)" stroke-opacity=".16" stroke-width="1"/><circle cx="100" cy="100" r="36" fill="none" stroke="var(--bone)" stroke-opacity=".16" stroke-width="1"/><circle cx="100" cy="100" r="48" fill="none" stroke="var(--bone)" stroke-opacity=".16" stroke-width="1"/><circle cx="100" cy="100" r="60" fill="none" stroke="var(--bone)" stroke-opacity=".16" stroke-width="1"/><circle cx="100" cy="100" r="72" fill="none" stroke="var(--bone)" stroke-opacity=".16" stroke-width="1"/><circle cx="100" cy="100" r="84" fill="none" stroke="var(--bone)" stroke-opacity=".16" stroke-width="1"/><g class="nuc"><circle cx="100" cy="100" r="13" fill="var(--gold)" opacity=".08"/><circle cx="100" cy="100" r="5" fill="var(--gold)"/><circle cx="106.5" cy="103.8" r="4" fill="var(--gold)"/><circle cx="100.0" cy="107.5" r="4" fill="var(--bone)"/><circle cx="93.5" cy="103.8" r="4" fill="var(--gold)"/><circle cx="93.5" cy="96.2" r="4" fill="var(--bone)"/><circle cx="100.0" cy="92.5" r="4" fill="var(--gold)"/><circle cx="106.5" cy="96.2" r="4" fill="var(--bone)"/></g><g class="sh sh1"><circle class="pe" cx="124.0" cy="100.0" r="3" fill="var(--gold)"/><circle cx="76.0" cy="100.0" r="1.8" fill="var(--bone)" opacity=".45"/></g><g class="sh sh2"><circle class="pe" cx="136.0" cy="100.0" r="3" fill="var(--gold)"/><circle cx="125.5" cy="125.5" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="100.0" cy="136.0" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="74.5" cy="125.5" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="64.0" cy="100.0" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="74.5" cy="74.5" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="100.0" cy="64.0" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="125.5" cy="74.5" r="1.8" fill="var(--bone)" opacity=".45"/></g><g class="sh sh3"><circle class="pe" cx="148.0" cy="100.0" r="3" fill="var(--gold)"/><circle cx="145.1" cy="116.4" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="136.8" cy="130.9" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="124.0" cy="141.6" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="108.3" cy="147.3" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="91.7" cy="147.3" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="76.0" cy="141.6" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="63.2" cy="130.9" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="54.9" cy="116.4" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="52.0" cy="100.0" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="54.9" cy="83.6" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="63.2" cy="69.1" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="76.0" cy="58.4" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="91.7" cy="52.7" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="108.3" cy="52.7" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="124.0" cy="58.4" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="136.8" cy="69.1" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="145.1" cy="83.6" r="1.8" fill="var(--bone)" opacity=".45"/></g><g class="sh sh4"><circle class="pe" cx="160.0" cy="100.0" r="3" fill="var(--gold)"/><circle cx="158.8" cy="111.7" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="155.4" cy="123.0" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="149.9" cy="133.3" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="142.4" cy="142.4" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="133.3" cy="149.9" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="123.0" cy="155.4" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="111.7" cy="158.8" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="100.0" cy="160.0" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="88.3" cy="158.8" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="77.0" cy="155.4" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="66.7" cy="149.9" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="57.6" cy="142.4" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="50.1" cy="133.3" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="44.6" cy="123.0" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="41.2" cy="111.7" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="40.0" cy="100.0" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="41.2" cy="88.3" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="44.6" cy="77.0" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="50.1" cy="66.7" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="57.6" cy="57.6" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="66.7" cy="50.1" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="77.0" cy="44.6" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="88.3" cy="41.2" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="100.0" cy="40.0" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="111.7" cy="41.2" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="123.0" cy="44.6" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="133.3" cy="50.1" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="142.4" cy="57.6" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="149.9" cy="66.7" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="155.4" cy="77.0" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="158.8" cy="88.3" r="1.8" fill="var(--bone)" opacity=".45"/></g><g class="sh sh5"><circle class="pe" cx="172.0" cy="100.0" r="3" fill="var(--gold)"/><circle cx="167.7" cy="124.6" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="155.2" cy="146.3" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="136.0" cy="162.4" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="112.5" cy="170.9" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="87.5" cy="170.9" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="64.0" cy="162.4" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="44.8" cy="146.3" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="32.3" cy="124.6" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="28.0" cy="100.0" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="32.3" cy="75.4" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="44.8" cy="53.7" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="64.0" cy="37.6" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="87.5" cy="29.1" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="112.5" cy="29.1" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="136.0" cy="37.6" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="155.2" cy="53.7" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="167.7" cy="75.4" r="1.8" fill="var(--bone)" opacity=".45"/></g><g class="sh sh6"><circle class="pe" cx="184.0" cy="100.0" r="3" fill="var(--gold)"/><circle cx="142.0" cy="172.7" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="58.0" cy="172.7" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="16.0" cy="100.0" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="58.0" cy="27.3" r="1.8" fill="var(--bone)" opacity=".45"/><circle cx="142.0" cy="27.3" r="1.8" fill="var(--bone)" opacity=".45"/></g>';
 
+const GLYPHS = {
+    code: 'm8 4-8 8 8 8 3-3-5-5 5-5Zm8 0-3 3 5 5-5 5 3 3 8-8Z',
+    pen: 'M3 17 16.5 3.5a2.8 2.8 0 0 1 4 4L7 21H3Zm1 6h17v-2H9Z',
+    palette: 'M12 2C6.5 2 2 6.1 2 11.3 2 17.2 6.9 22 12.5 22c2.5 0 3.5-2.2 2-3.7-.9-.9-.4-2.3 1-2.3H18c3 0 4-2.4 4-5 0-5-4.5-9-10-9ZM7 8a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm6-2a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1 0-3Zm5 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3ZM5 13a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1 0-3Z',
+    rocket: 'M21 1c-7 1-13 5-13 10 0 3 2 5 5 5 5 0 7-8 8-15ZM7 14c-6 0-2 6-7 8 8 3 13-3 7-8Z',
+};
 const personas = [
-    { img: '/img/dev.webp', alt: 'Pragadeesh, developer', title: 'Software Developer and Curious Learner',
+    { role: 'Developer', glyph: GLYPHS.code,
       text: 'With a love for reading and writing, I explore topics ranging from philosophy to fiction. I enjoy expanding my technical skills by learning about machine learning to create meaningful and practical solutions.' },
-    { img: '/img/writer.webp', alt: 'Writing desk', title: 'Creative Technologist and Writer',
+    { role: 'Writer', glyph: GLYPHS.pen,
       text: 'I strive to blend creativity with logic in my work. Writing fiction and philosophy inspires me to build thoughtful solutions, whether through code or learning new technologies like machine learning.' },
-    { img: '/img/artist.webp', alt: 'Artwork in progress', title: 'Developer, Artist, and Lifelong Learner',
+    { role: 'Artist', glyph: GLYPHS.palette,
       text: 'Curious by nature, I explore diverse interests, from philosophy and fiction writing to learning a bit of machine learning. My goal is to continuously improve my skills and create meaningful, user-friendly solutions.' },
-    { img: '/img/designer.webp', alt: 'Design work', title: 'Writer and Tech Enthusiast',
+    { role: 'Lifelong Learner', glyph: GLYPHS.rocket,
       text: 'I am a developer with a passion for combining creativity and technology. Whether it is writing fiction, exploring philosophy, or learning about machine learning, I strive to bring thoughtful solutions to every project I work on.' },
 ];
 
@@ -104,12 +110,6 @@ const socials = [
     <canvas class="ember-trail" id="trail" aria-hidden="true"></canvas>
     <div class="grain" aria-hidden="true"></div>
     <div class="bg-anim" aria-hidden="true">
-        <div class="pattern-base"></div>
-        <div class="pattern-patches"><i></i><i></i><i></i></div>
-        <div class="pattern-light" id="patternLight"></div>
-        <div class="mobile-aura"></div>
-        <div class="bg-glow one"></div>
-        <div class="bg-glow two"></div>
         <span class="spark" style="left:7%;animation-delay:0s;animation-duration:17s"></span>
         <span class="spark" style="left:16%;animation-delay:4s;animation-duration:14s"></span>
         <span class="spark" style="left:27%;animation-delay:8s;animation-duration:19s"></span>
@@ -134,6 +134,7 @@ const socials = [
     <button class="theme-toggle" id="themeToggle" aria-label="Switch colour mode" type="button">Mode</button>
 
     <section class="hero" id="hero">
+        <div class="pattern-base" aria-hidden="true"></div>
         <svg class="atom" viewBox="0 0 200 200" aria-hidden="true"><Fragment set:html={ATOM} /></svg>
         <div class="hero-copy">
         <div class="spotlight" aria-hidden="true"></div>
@@ -155,7 +156,6 @@ const socials = [
         </div>
         <p class="hero-sub rv"><span>I am</span><span class="flip" id="flip">an artist</span></p>
         <p class="hero-bio rv">I am a software developer, writer and artist. I build thoughtful digital experiences and explore fiction, philosophy and visual art.</p>
-        <p class="scroll-cue rv" aria-hidden="true">scroll &#9662;</p>
         </div>
     </section>
 
@@ -168,8 +168,9 @@ const socials = [
         <div class="personas">
             {personas.map((p, i) => (
                 <div class={`persona rv ${i % 2 ? 'from-right' : 'from-left'}`}>
-                    <img src={p.img} alt={p.alt} loading="lazy" decoding="async" />
-                    <div><strong>{p.title}</strong><p>{p.text}</p></div>
+                    <span class="p-idx" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+                    <span class="p-glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" d={p.glyph} /></svg></span>
+                    <div><strong>{p.role}</strong><p>{p.text}</p></div>
                 </div>
             ))}
         </div>
@@ -191,7 +192,7 @@ const socials = [
         </div>
     </section>
 
-    <section class="movement" id="writing">
+    <section class="movement band" id="writing" style="--band-img: url('/img/writer.webp')">
         <header class="m-head rv">
             <span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" d="M3 17 16.5 3.5a2.8 2.8 0 0 1 4 4L7 21H3Zm1 6h17v-2H9Z" /></svg></span>
             <h2 class="m-title gold">WRITING</h2>
@@ -220,7 +221,7 @@ const socials = [
         ))}
     </section>
 
-    <footer class="foot" id="contact">
+    <footer class="foot band" id="contact" style="--band-img: url('/art/butterfly-girl.webp')">
         <header class="m-head rv">
             <span class="section-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" d="M2 4h20v3L12 14 2 7Zm0 6 10 7 10-7v10H2Z" /></svg></span>
             <h2 class="m-title gold">CONTACT</h2>
@@ -370,7 +371,7 @@ const socials = [
 
     // Gentle card tilt only where a precise pointer is available.
     if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && !reduce) {
-        document.querySelectorAll('.persona, .panel').forEach((card) => {
+        document.querySelectorAll('.panel').forEach((card) => {
             let frame = 0;
             card.addEventListener('pointermove', (e) => {
                 if (frame) return;
@@ -395,21 +396,51 @@ const socials = [
     // ember trail
     const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     // A single paint per pointer frame, with no idle animation loop.
-    const pattern = document.getElementById('patternLight');
-    if (fine && !reduce && pattern) {
-        let patternFrame = 0;
-        let px = window.innerWidth * .65, py = window.innerHeight * .4;
-        window.addEventListener('pointermove', (e) => {
-            px = e.clientX; py = e.clientY;
-            if (patternFrame) return;
-            patternFrame = requestAnimationFrame(() => {
-                pattern.style.setProperty('--px', px + 'px');
-                pattern.style.setProperty('--py', py + 'px');
-                pattern.parentElement.style.setProperty('--px', px + 'px');
-                pattern.parentElement.style.setProperty('--py', py + 'px');
-                patternFrame = 0;
-            });
+
+    // Hero atom: a light 3D tilt toward the pointer.
+    const heroEl = document.querySelector('.hero');
+    const heroAtom = heroEl && heroEl.querySelector('.atom');
+    if (fine && !reduce && heroEl && heroAtom) {
+        const clampTilt = (v) => Math.max(-1, Math.min(1, v));
+        let tiltX = 0, tiltY = 0, atomFrame = 0;
+        const applyAtom = () => {
+            atomFrame = 0;
+            const drift = Math.min(scrollY * 0.12, 90);
+            heroAtom.style.transform = `perspective(800px) translate3d(0, ${drift.toFixed(1)}px, 0) rotateY(${(tiltX * 14).toFixed(2)}deg) rotateX(${(-tiltY * 14).toFixed(2)}deg)`;
+        };
+        const queueAtom = () => { if (!atomFrame) atomFrame = requestAnimationFrame(applyAtom); };
+        heroEl.addEventListener('pointermove', (e) => {
+            const r = heroAtom.getBoundingClientRect();
+            tiltX = clampTilt(((e.clientX - (r.left + r.width / 2)) / r.width) * .6);
+            tiltY = clampTilt(((e.clientY - (r.top + r.height / 2)) / r.height) * .6);
+            queueAtom();
         }, { passive: true });
+        heroEl.addEventListener('pointerleave', () => { tiltX = 0; tiltY = 0; queueAtom(); });
+        addEventListener('scroll', queueAtom, { passive: true });
+        applyAtom();
+    }
+
+    // Scroll parallax: section headers drift gently, separators slide against the scroll.
+    if (!reduce) {
+        const pxHeads = [...document.querySelectorAll('.m-head')];
+        const pxBands = [...document.querySelectorAll('.band')];
+        let pxFrame = 0;
+        const applyParallax = () => {
+            pxFrame = 0;
+            const vh = innerHeight;
+            for (const el of pxHeads) {
+                const r = el.getBoundingClientRect();
+                el.style.setProperty('--pxy', ((r.top + r.height / 2 - vh / 2) * 0.07).toFixed(1) + 'px');
+            }
+            for (const el of pxBands) {
+                const r = el.getBoundingClientRect();
+                el.style.setProperty('--bgy', ((r.top + r.height / 2 - vh / 2) * -0.08).toFixed(1) + 'px');
+            }
+        };
+        const queueParallax = () => { if (!pxFrame) pxFrame = requestAnimationFrame(applyParallax); };
+        addEventListener('scroll', queueParallax, { passive: true });
+        addEventListener('resize', queueParallax);
+        applyParallax();
     }
 
     const canvas = document.getElementById('trail');
@@ -429,21 +460,30 @@ const socials = [
         let trailFrame = 0;
         const trailAccent = () => document.documentElement.dataset.theme === 'dark' ? ['#39ff78', '#b54bff'] : ['#00c94f', '#842dff'];
         window.addEventListener('pointermove', (e) => {
-            pts.push({ x: e.clientX, y: e.clientY, life: 1, gold: Math.random() > 0.5 });
-            if (pts.length > 12) pts.shift();
+            pts.push({ x: e.clientX, y: e.clientY, life: 1, gold: Math.random() > 0.5, rot: Math.random() * Math.PI });
+            if (pts.length > 14) pts.shift();
             if (!trailFrame) trailFrame = requestAnimationFrame(draw);
         });
         const draw = () => {
             ctx.clearRect(0, 0, w, h);
             for (const p of pts) {
-                p.life *= 0.86;
-                ctx.beginPath();
-                ctx.globalAlpha = p.life * .2;
+                p.life *= 0.9;
+                p.y -= 0.3;
+                p.rot += 0.06;
+                const sz = 1.5 + p.life * 3.5;
+                ctx.save();
+                ctx.translate(p.x, p.y);
+                ctx.rotate(p.rot);
+                ctx.globalAlpha = p.life * .55;
                 ctx.fillStyle = p.gold ? trailAccent()[0] : trailAccent()[1];
-                ctx.shadowColor = p.gold ? trailAccent()[0] : trailAccent()[1];
-                ctx.shadowBlur = 3;
-                ctx.arc(p.x, p.y, 0.5 + p.life * 1.2, 0, Math.PI * 2);
+                ctx.beginPath();
+                ctx.moveTo(0, -sz);
+                ctx.quadraticCurveTo(sz * .28, -sz * .28, sz, 0);
+                ctx.quadraticCurveTo(sz * .28, sz * .28, 0, sz);
+                ctx.quadraticCurveTo(-sz * .28, sz * .28, -sz, 0);
+                ctx.quadraticCurveTo(-sz * .28, -sz * .28, 0, -sz);
                 ctx.fill();
+                ctx.restore();
             }
             while (pts.length && pts[0].life < 0.04) pts.shift();
             trailFrame = pts.length ? requestAnimationFrame(draw) : 0;
