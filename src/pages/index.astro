@@ -180,7 +180,7 @@ const socials = [
         <div class="panels">
             {panels.map((p, i) => (
                 <figure class={`panel rv ${i % 2 ? 'from-right' : 'from-left'}`}>
-                    <button class="art-open" type="button" data-art={p.src} data-title={p.title} aria-label={`View ${p.title} full size`}><img src={p.src} alt={p.title} loading="lazy" decoding="async" /></button>
+                    <button class="art-open" type="button" data-art={p.src} data-title={p.title} data-subtitle={p.quote} aria-label={`View ${p.title} full size`}><img src={p.src} alt={p.title} loading="lazy" decoding="async" /></button>
                     <figcaption><strong>{p.title}</strong><span>{p.quote}</span></figcaption>
                 </figure>
             ))}
@@ -237,22 +237,20 @@ const socials = [
     </footer>
 
 <dialog class="art-dialog" id="artDialog" aria-labelledby="artTitle">
-        <div class="art-dialog-bar"><h2 id="artTitle"></h2><button type="button" id="artZoom">Actual size</button><button type="button" id="artClose" aria-label="Close artwork">Close</button></div>
-        <div class="art-stage" id="artStage"><img id="artFull" alt="" /></div>
+        <button type="button" id="artClose" class="art-close" aria-label="Close artwork">&#215;</button>
+        <div class="art-stage" id="artStage"><img id="artFull" alt="" /><div class="art-caption"><h2 id="artTitle"></h2><p id="artSubtitle"></p></div></div>
     </dialog>
 <script>
     const artDialog = document.getElementById('artDialog');
     const artFull = document.getElementById('artFull');
     const artStage = document.getElementById('artStage');
-    const artZoom = document.getElementById('artZoom');
     let artOpener = null;
     document.querySelectorAll('.art-open').forEach((button) => button.addEventListener('click', () => {
         artOpener = button;
         artFull.src = button.dataset.art;
         artFull.alt = button.dataset.title;
         document.getElementById('artTitle').textContent = button.dataset.title;
-        artStage.classList.remove('actual-size');
-        artZoom.textContent = 'Actual size';
+        document.getElementById('artSubtitle').textContent = button.dataset.subtitle;
         artDialog.showModal();
         document.documentElement.style.overflow = 'hidden';
     }));
@@ -262,10 +260,13 @@ const socials = [
         document.documentElement.style.overflow = '';
         artOpener?.focus({ preventScroll: true });
     });
-    artZoom.addEventListener('click', () => {
-        const actual = artStage.classList.toggle('actual-size');
-        artZoom.textContent = actual ? 'Fit to screen' : 'Actual size';
-    });
+    if (window.matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)').matches) {
+        artStage.addEventListener('pointermove', (event) => {
+            const r = artStage.getBoundingClientRect();
+            artFull.style.transform = 'perspective(1200px) rotateY(' + ((event.clientX-r.left)/r.width-.5)*3 + 'deg) rotateX(' + (-((event.clientY-r.top)/r.height-.5)*3) + 'deg)';
+        }, { passive: true });
+        artStage.addEventListener('pointerleave', () => { artFull.style.transform = ''; });
+    }
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const themeToggle = document.getElementById('themeToggle');
     const syncThemeButton = () => {
