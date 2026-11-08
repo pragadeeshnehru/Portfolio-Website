@@ -480,3 +480,21 @@ section[id], footer[id] { scroll-margin-top: 95px; }
 .art-stage.actual-size { display: block; }
 .art-stage.actual-size img { max-width: none; max-height: none; }
 @media(max-width:480px) { .art-dialog-bar { padding-inline: .6rem; gap: .4rem; } .art-dialog-bar h2 { font-size: .8rem; } .art-dialog-bar button { font-size: .7rem; padding-inline: .6rem; } }
+
+/* Equal icon-card insets and platform colours. */
+.role-icons svg { width: 22px; height: 22px; padding: 10px; box-sizing: content-box; }
+.section-icon { width: 56px; height: 56px; padding: 14px; }
+.section-icon svg { width: 28px; height: 28px; }
+.tech { width: 88px; padding: 12px; }
+.dock-item { width: 56px; height: 56px; padding: 14px; display: grid; place-items: center; }
+.dock-item svg { width: 26px; height: 26px; transition: fill .2s ease, filter .2s ease; }
+.dock-item[aria-label="YouTube"] { --social-color: #e9232e; }
+.dock-item[aria-label="LinkedIn"] { --social-color: #0a66c2; }
+.dock-item[aria-label="X"], .dock-item[aria-label="GitHub"] { --social-color: var(--bone); }
+.dock-item:hover, .dock-item:focus-visible { border-color: var(--social-color); }
+.dock-item:hover svg, .dock-item:focus-visible svg { fill: var(--social-color); filter: drop-shadow(0 0 5px color-mix(in srgb, var(--social-color) 30%, transparent)); }
+
+.theme-toggle { width: 48px; height: 48px; min-width: 48px; padding: 12px; display: grid; place-items: center; }
+.theme-toggle svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+.hero-sub .flip { white-space: nowrap; overflow: visible; }
