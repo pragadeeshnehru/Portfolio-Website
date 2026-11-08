@@ -321,9 +321,25 @@ const socials = [
             nav.classList.toggle('solid', y > 40);
             const h = document.documentElement.scrollHeight - window.innerHeight;
             progress.style.transform = 'scaleX(' + (h > 0 ? y / h : 0) + ')';
+            // Works covers the art, writing and craft sections beneath that label.
+            const marker = y + Math.min(window.innerHeight * .32, 240);
+            const groups = ['about', 'works', 'contact'];
+            let current = '';
+            for (const id of groups) {
+                const section = document.getElementById(id);
+                if (section && section.offsetTop <= marker) current = id;
+            }
+            if (y + window.innerHeight >= document.documentElement.scrollHeight - 8) current = 'contact';
+            document.querySelectorAll('.nav-link').forEach((button) => {
+                const active = button.dataset.go === current;
+                button.classList.toggle('is-active', active);
+                if (active) button.setAttribute('aria-current', 'location');
+                else button.removeAttribute('aria-current');
+            });
             ticking = false;
         });
     };
+    window.addEventListener('resize', onScroll, { passive: true });
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
     document.querySelectorAll('.nav-link').forEach((b) =>
