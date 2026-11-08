@@ -598,3 +598,7 @@ section[id], footer[id] { scroll-margin-top: 95px; }
 .bg-anim .pattern-patches i:nth-child(3) { background: radial-gradient(ellipse, rgba(var(--field-pink),.45), transparent 68%); }
 :root[data-theme="dark"] .spark { background: #39ff78; box-shadow: 0 0 5px rgba(57,255,120,.3); }
 :root[data-theme="dark"] .spark:nth-child(odd) { background: #c46aff; }
+/* Contact flows directly from Craft; translucent frosted navigation. */
+.foot { border-top: 0; }
+.section-rail { background: rgba(var(--bg-rgb),.18); }
+.section-rail:hover, .section-rail:focus-within { background: rgba(var(--bg-rgb),.3); }
