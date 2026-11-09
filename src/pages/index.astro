@@ -277,7 +277,15 @@ const socials = [
         let ioWorking = false;
         const io = new IntersectionObserver((entries) => {
             ioWorking = true;
-            for (const e of entries) e.target.classList.toggle('rv-in', e.isIntersecting);
+            for (const e of entries) {
+                if (e.isIntersecting) e.target.classList.add('rv-in');
+                // Re-hide only when the element leaves through the bottom, so the
+                // reveal replays when scrolling back up. Never re-hide at the top
+                // edge: hiding shifts the element down (translateY 46px) back into
+                // view, which re-triggers the observer in a show/hide loop that
+                // looks like the section vibrating while scrolling.
+                else if (e.boundingClientRect.top > 0) e.target.classList.remove('rv-in');
+            }
         }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
         document.querySelectorAll('.rv').forEach((el) => io.observe(el));
         // fail-open: if the observer never reports back, show everything
